@@ -47,7 +47,7 @@ Career
       <div class="real-career">
     <div class="container">
         <div class="stand-main-circle">
-          <div class="career-stand  animatable fadeInDown">
+          <div class="career-stand">
             @if($sectwoheading)
             <h2>{{$sectwoheading->title}}</h2>
             <p class="newcareer">{{$sectwoheading->sub_title}}</p>
@@ -57,7 +57,7 @@ Career
               @if($sectwo)
               @foreach($sectwo as $row)
               <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="stand-box animatable fadeInDown">
+                <div class="stand-box ">
                   <img src="/uploads/career/{{$row->image}}" alt="{{$row->title}}">
                   <h5>{{$row->title}}</h5>
                   <p>{{$row->description}}</p>
@@ -83,7 +83,7 @@ Career
            </div>
            <div class="col-1 d-lg-block d-none p-0"></div>
            <div class="col-lg-5 col-md-6 col-sm-12">
-             <div class="position-info  animatable fadeInDown">
+             <div class="position-info animatable fadeInDown">
                <h3>{{($secthree) ? $secthree->title : 'Empty'}}</h3>
                <p>{{($secthree) ? $secthree->sub_title : 'Empty'}}</p>
               <select id="target" >
@@ -115,7 +115,7 @@ Career
    </section>
    <section>
      <div class="container">
-       <div class="careers-real animatable fadeInDown">
+       <div class="careers-real ">
         @if($secfourheading)
          <h2>{{$secfourheading->title}}</h2>
          <p class="newcareerpera"> {{$secfourheading->sub_title}}</p>
@@ -126,7 +126,7 @@ Career
           @if($secfour)
           @foreach($secfour as $row)
           <div class=" col-lg-4 col-md-4 col-sm-4">
-            <div class="about-details animatable fadeInDown ">
+            <div class="about-details  ">
               <img src="/uploads/career/{{$row->image}}" alt="">
                   <h5>{{$row->title}}</h5>
                   <p>{{$row->description}}</p>

@@ -73,10 +73,10 @@
                       <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
                       <input type="text" class="form-control" id="exampleInputEmail1" value="@if($en) {{$en->copyright}} @endif" name="copyright" required="" placeholder="Enter Copyright">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">Submit</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" value="@if($en) {{$en->submit}} @endif" name="submit" required="" placeholder="Enter Submit">
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
                   </form>
                 </div>
@@ -113,13 +113,13 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">حقوق النشر</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
                       <input type="text" class="form-control" id="exampleInputEmail1" value="@if($ar) {{$ar->copyright}} @endif" name="copyright" required="" placeholder="أدخل حقوق النشر">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">إرسال</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
                       <input type="text" class="form-control" id="exampleInputEmail1" value="@if($ar) {{$ar->submit}} @endif" name="submit" required="" placeholder="أدخل إرسال">
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn white m-b generalsetting_admin">إرسال</button>
                   </form>
                 </div>

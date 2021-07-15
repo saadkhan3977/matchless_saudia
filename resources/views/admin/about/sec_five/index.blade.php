@@ -178,7 +178,7 @@
         </div>
       </div>
 
-      <div class="box">
+      {{-- <div class="box">
           <div class="box-header">
             <h3>Slider</h3>
             <br>
@@ -219,7 +219,7 @@
                 </tr>
               </thead>
               <tbody>
-                {{-- <tr>
+                <tr>
                   <td>{{$headingdata->title}}</td>
                   <td>{{$headingdata->sub_title}}</td>
                   <td>
@@ -252,11 +252,11 @@
                     </div>
                   </div>
                 </td>
-              </tr> --}}
+              </tr>
             </tbody>
           </table>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 @endsection

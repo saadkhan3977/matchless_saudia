@@ -17,7 +17,7 @@ About
         <div class="carousel-inner">
           @if(!empty(json_decode($secone)))
           @foreach($secone as $row)
-          <div class="carousel-item about-caro @if($loop->first) active @endif" style="background-image: url(../uploads/about/{{$row->image}});">
+          <div class="carousel-item about-caro @if($loop->first) active @endif" style="background-image: url(/uploads/about/{{$row->image}});">
            <div class="container">
             <div class="about-caro-info">
               <h2>{{$row->title}}</h2>
@@ -58,7 +58,7 @@ About
           @foreach($sectwo as $row => $value)
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="about-details">
-              <img src="uploads/about/{{$value->image}}">
+              <img src="/uploads/about/{{$value->image}}">
               <h6>{{$value->title}}</h6>
               <p>{{$value->description}}</p>
             </div>

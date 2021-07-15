@@ -57,10 +57,10 @@
                       <label for="exampleInputEmail1">Image</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image" required="">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">Video Url</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="video_url" required="" placeholder="Enter Link">
-                    </div>
+                    </div> --}}
                     
                     <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
                     <a href="{{ route('about_sec_three.index') }}" class="btn white m-b generalsetting_admin">Cancel</a>
@@ -95,10 +95,10 @@
                       <label for="exampleInputEmail1">صورة</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image" required="">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">رابط الفيديو</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="video_url" required="" placeholder="أدخل الارتباط">
-                    </div>
+                    </div> --}}
                     
                     <button type="submit" class="btn white m-b generalsetting_admin">إرسال</button>
                     <a href="{{ route('about_sec_three.index') }}" class="btn white m-b generalsetting_admin">إلغاء</a>

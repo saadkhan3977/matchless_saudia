@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/frontend/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/frontend/assets/css/style.css">
     <link rel="stylesheet" href="/frontend/assets/css/lity.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
     <link rel="stylesheet" href="/frontend/assets/css/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -161,17 +161,17 @@
       {{-- @if($link) @if($link->facebook_status !='')
       <a href="{{$link->facebook}}" class="facebook"><i class="fab fa-facebook-f"></i></a> 
       @endif @endif --}}
+      @if($link) @if($link->facebook !='')
+      <a href="{{$link->facebook}}"><i class="fab fa-facebook facebook"></i></a>
+      @endif @endif
       @if($link) @if($link->twitter_status !='')
       <a href="{{$link->twitter}}"><i class="fab fa-twitter twitter"></i></a>
-      @endif @endif
-      @if($link) @if($link->instagram_status !='')
-      <a href="{{$link->instagram}}"><i class="fab fa-instagram instagram"></i></a>
       @endif @endif
       @if($link) @if($link->linkedin_status !='')
       <a href="{{$link->linkedin}}"><i class="fab fa-linkedin linkedin"></i></a>
       @endif @endif
       @if($link) @if($link->whatsapp_status !='')
-      <a href="{{$link->whatsapp}}"><i class="fab fa-whatsapp whatsapp"></i></a>
+      <a href="{{$link->whatsapp}}"><i class="fab fa-youtube youtube"></i></a>
       @endif @endif
       </nav>
     </header>
@@ -217,7 +217,7 @@
                         @endif @endif
                         
                         @if($link) @if($link->whatsapp_status !='')
-                        <li><a href="{{$link->whatsapp}}"><i class="fab fa-whatsapp whatsapp"></i></a></li>
+                        <li><a href="{{$link->whatsapp}}"><i class="fab fa-youtube youtube"></i></a></li>
                         @endif @endif
                       </ul>
                     </div>
@@ -316,19 +316,43 @@
  
               
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {{-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> --}}
     <script src="/frontend/assets/js/gsap.min.js"></script>
     <script src="/frontend/assets/js/jquery.min.js"></script>
     <script src="/frontend/assets/js/popper.min.js"></script>
     <script src="/frontend/assets/js/script.js"></script>
     <script src="/frontend/assets/js/bootstrap.min.js"></script>
     <script src="/frontend/assets/js/lity.min.js"></script>
-     <script src="/frontend/assets/js/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/frontend/assets/js/career.js"></script>
     <script src="/frontend/assets/js/index.js"></script>
     <script src="/frontend/assets/js/about.js"></script>
-    
+     <script src="/frontend/assets/js/slick.min.js"></script>
+    <script type="text/javascript">
+      // CAREER SLICK SLIDER JS START
+$(document).ready(function() {
+  // alert('sdas');
+    $('.rtl-slider-2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        fade: true,
+        asNavFor: '.rtl-slider-nav-2'
+    });
+    $('.rtl-slider-nav-2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        asNavFor: '.rtl-slider-2',
+        centerMode: false,
+        focusOnSelect: true,
+        prevArrow: ".thumb-prev",
+        nextArrow: ".thumb-next",
+    });
+});
+    </script>
     </body>
 </html>
 

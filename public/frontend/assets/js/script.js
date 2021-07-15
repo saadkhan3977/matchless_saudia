@@ -1,5 +1,7 @@
-jQuery(function($) {
+// jQuery(function($) {
+$(document).ready(function() {
   
+  // alert('d');
   // Function which adds the 'animated' class to any '.animatable' in view
   var doAnimations = function() {
     
@@ -23,8 +25,8 @@ jQuery(function($) {
   };
   
   // Hook doAnimations on scroll, and trigger a scroll
-  $(window).on('scroll', doAnimations);
-  $(window).trigger('scroll');
+  $(document).on('scroll', doAnimations);
+  $(document).trigger('scroll');
 
 });  
 

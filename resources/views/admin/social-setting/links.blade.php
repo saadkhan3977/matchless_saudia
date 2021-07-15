@@ -48,7 +48,7 @@
                 <div class="row">
                   <div class="col-4">
                   <br>
-                    <h6 style="float:right">Whatsapp *</h6>
+                    <h6 style="float:right">Youtube *</h6>
                   </div>
                   <div class="col-4">
                   <br>

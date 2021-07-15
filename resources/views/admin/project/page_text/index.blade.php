@@ -30,7 +30,7 @@
       <h3>Manage Project Page Text Section</h3>
             <hr>
           @if(count($data) < '2')
-      <a href="{{route('text.store')}}" class="btn btn-icon generalsetting_admin">
+      <a href="{{route('text.create')}}" class="btn btn-icon generalsetting_admin">
               <i class="fa fa-plus"></i>
             </a>
             @endif 

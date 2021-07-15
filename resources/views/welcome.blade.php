@@ -1,4 +1,4 @@
-@extends('layouts.master')
+	@extends('layouts.master')
 @section('page-title')
   Home
 @endsection
@@ -93,60 +93,31 @@
      </div>
        <div class="owl-slider">
         <div id="carousel" class="owl-carousel slider-custom" style="height: 400px;">
-          <div class="item c-item" id="cero-1">
-            <a href="https://www.youtube.com/watch?v=Anw1IXfCvM8" class=" video-popup mfp-iframe" data-lity>
+          <?php $id=1 ?>
+          @if($projects)
+          @foreach($projects as $row)
+          <div class="item c-item" style="background-image: url(uploads/project/{{$row->image}});" id="cero-{{$id++}}">
+            <a href="{{$row->video}}" class=" video-popup mfp-iframe" data-lity>
             <div class="cero-info">
               <img src="/frontend/assets/img/play.png">
             </div></a>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12">
                <div class="cero-logo">
-                <img src="/frontend/assets/img/amaly-logo.png">
+                <img src="/uploads/project/{{$row->logo}}">
+                {{-- <p>{{$row->description}}</p> --}}
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12">
                <div class="cero-btn">
-                <a href="#"><button type="button" class="btn btn-outline-light social">Read More</button></a>
+                <a href="/projects/{{preg_replace('~[^\pL\d]+~u', '-', $row->title)}}"><button type="button" class="btn btn-outline-light social">Read More</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item c-item" id="cero-2">
-            <a href="https://youtu.be/a4mU-CJPWY8" class=" video-popup mfp-iframe" data-lity>
-            <div class="cero-info">
-              <img src="/frontend/assets/img/play.png">
-            </div></a>
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-               <div class="cero-logo">
-                <img src="/frontend/assets/img/okazulogo.png">
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-               <div class="cero-btn">
-                <a href="#"><button type="button" class="btn btn-outline-light social">Read More</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item c-item" id="cero-3">
-            <a href="https://youtu.be/iYnKE0AABsk" class=" video-popup mfp-iframe" data-lity>
-            <div class="cero-info">
-              <img src="/frontend/assets/img/play.png">
-            </div></a>
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-               <div class="cero-logo">
-                <img src="/frontend/assets/img/Asset_5.png">
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-               <div class="cero-btn">
-                <a href="#"><button type="button" class="btn btn-outline-light social">Read More</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
+          @endif
+          
         </div>
         </div>
       </div>

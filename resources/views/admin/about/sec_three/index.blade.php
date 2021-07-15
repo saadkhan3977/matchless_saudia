@@ -45,7 +45,7 @@
             <th>Sub Title</th>
             <th>Sub Description</th>
             <th>Image</th>
-            <th>Video</th>
+            {{-- <th>Video</th> --}}
             <th>Language</th>
             <th>Manage</th>
           </tr>
@@ -61,7 +61,7 @@
             <td>{{$row->sub_title}}</td>
             <td>{{$row->sub_description}}</td>
             <td><img src="/uploads/about/{{$row->image}}" alt="{{$row->title}}" width="100"></td>
-            <td>{{$row->video_url}}</td>
+            {{-- <td>{{$row->video_url}}</td> --}}
             <td>{{$row->lang}}</td>
             <td style="display: flex;">
               <a style="margin-right: 10px;" class="btn btn-default generalsetting_admin" href="{{route('about_sec_three.show',$row->id)}}"><i class="fa fa-edit "></i></a>
