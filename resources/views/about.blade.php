@@ -22,7 +22,7 @@ About
             <div class="about-caro-info">
               <h2>{{$row->title}}</h2>
               <p>{{$row->description}}</p>
-              <a href="{{$row->link}}"><button type="button" class="btn btn-light">{{$row->description}}</button></a>
+              <a href="{{$row->link}}"><button type="button" class="btn btn-light">{{$row->link_text}}</button></a>
               <img src="/frontend/assets/img/shape.png">
             </div>
             </div>
