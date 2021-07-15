@@ -135,7 +135,7 @@
              @foreach($homemissionsfeatures as $roww)
                <div class="col-lg-6 col-md-6 col-sm-6">
                  <div class="mission-details animatable fadeInDown">
-                   <img src="/frontend/assets/img/whole.png" alt="{{$roww->title}}">
+                   <img src="/uploads/home/{{$roww->image}}" alt="{{$roww->title}}">
                  <h5>{{$roww->title}}</h5>
                  <p>{{$roww->description}}</p>
                  </div>
