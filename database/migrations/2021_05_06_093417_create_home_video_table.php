@@ -19,6 +19,7 @@ class CreateHomeVideoTable extends Migration
             $table->string('sub_title')->nullable();
             $table->text('description')->nullable();
             $table->string('link')->nullable();
+            $table->string('button_text')->nullable();
             $table->string('video_url')->nullable();
             $table->string('background_video')->nullable();
             $table->string('lang')->nullable();
