@@ -43,6 +43,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
                   <input type="text" class="form-control" required="" value="{{$data->description}}" id="exampleInputEmail1" name="description" placeholder="Enter Text">
                 </div>
                 
