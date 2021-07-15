@@ -37,12 +37,16 @@
                       <input type="text" class="form-control" required="" id="exampleInputEmail1" name="title" placeholder="Enter Title">
                     </div>
                     <div class="form-group">
+                      <label for="exampleInputEmail1">Image</label>
+                      <input type="file" class="form-control" required="" id="exampleInputEmail1" name="image" placeholder="Enter Title">
+                    </div>
+                    <div class="form-group">
                       <label for="exampleInputEmail1">Description</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
                       <input type="text" class="form-control" required="" id="exampleInputEmail1" name="description" placeholder="Enter Text">
                     </div>
-                    <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
                     <a href="{{ route('missions.index') }}" class="btn white m-b generalsetting_admin">Cancel</a>
+                    <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
                   </form>
                 </div>
                 <div class="tab-pane p-v-sm @if(count($en) == '4' && count($ar) != '4') active @endif" dir="rtl" id="tab_2">
@@ -53,12 +57,16 @@
                       <input type="text" class="form-control" required="" id="exampleInputEmail1" name="title" placeholder="أدخل العنوان">
                     </div>
                     <div class="form-group">
+                      <label for="exampleInputEmail1">صورة</label>
+                      <input type="file" class="form-control" required="" id="exampleInputEmail1" name="image" placeholder="Enter Title">
+                    </div>
+                    <div class="form-group">
                       <label for="exampleInputEmail1">وصف</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
                       <input type="text" class="form-control" required="" id="exampleInputEmail1" name="description" placeholder="أدخل النص">
                     </div>
-                    <button type="submit" class="btn white m-b generalsetting_admin">إرسال</button>
                     <a href="{{ route('missions.index') }}" class="btn white m-b generalsetting_admin">إلغاء</a>
+                    <button type="submit" class="btn white m-b generalsetting_admin">إرسال</button>
                   </form>
                 </div>
             </div>

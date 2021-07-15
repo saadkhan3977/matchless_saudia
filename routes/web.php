@@ -56,7 +56,8 @@ Route::group(['prefix' => 'blog'], function () {
 
 
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-		
+		Route::get('/user_contact','Contact\FormController@contact_us');
+		Route::resource('emails','EmailsController');
 		Route::resource('gallery','GalleryController');
 		Route::resource('/testimonial','TestimonialController');
 		Route::resource('/schedule','ScheduleController');

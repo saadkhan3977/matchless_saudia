@@ -86,6 +86,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Image</th>
             <th>Lang</th>
             <th>Manage</th>
           </tr>
@@ -98,6 +99,7 @@
             <td>{{$id++}}</td>
             <td>{{$row->title}}</td>
             <td>{{$row->description}}</td>
+            <td><img src="/uploads/home/{{$row->image}}" width="100" alt="{{$row->title}}"></td>
             <td>{{$row->lang}}</td>
             <td style="display: flex;">
               <a style="margin-right: 10px;" class="btn btn-default generalsetting_admin" href="{{route('missions_features.show',$row->id)}}"><i class="fa fa-edit "></i></a>

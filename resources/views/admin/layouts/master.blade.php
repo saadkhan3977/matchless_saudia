@@ -134,6 +134,16 @@
                   </a>
                 </li> --}}
                 <li>
+                  <a href="/admin/emails" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe5c3;
+                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Emails</span>
+                  </a>
+                </li>
+                <li>
                   <a href="/admin/testimonial" >
                     <span class="nav-icon">
                       <i class="material-icons">&#xe5c3;
@@ -331,6 +341,66 @@
                           <span class="nav-caret">
                             <i class="fa fa-caret-down"></i>
                           </span>
+                          <span class="nav-text">Services</span>
+                        </a>
+                        <ul class="nav-sub">
+                          <li>
+                            <a>
+                              <span class="nav-caret">
+                                <i class="fa fa-caret-down"></i>
+                              </span>
+                              <span class="nav-text">Consultacny</span>
+                            </a>
+                            <ul class="nav-sub">
+                              <li>
+                                <a href="/admin/consultancy/sec_one">
+                                  <span class="nav-text">Section 1</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/consultancy/sec_two">
+                                  <span class="nav-text">Section 2</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a>
+                              <span class="nav-caret">
+                                <i class="fa fa-caret-down"></i>
+                              </span>
+                              <span class="nav-text">Interior</span>
+                            </a>
+                            <ul class="nav-sub">
+                              <li>
+                                <a href="/admin/interior/sec_one">
+                                  <span class="nav-text">Section 1</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/interior/sec_two">
+                                  <span class="nav-text">Section 2</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/interior/sec_three">
+                                  <span class="nav-text">Section 3</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/admin/interior/sec_four">
+                                  <span class="nav-text">Section 4</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                          <span class="nav-caret">
+                            <i class="fa fa-caret-down"></i>
+                          </span>
                           <span class="nav-text">Contact</span>
                         </a>
                         <ul class="nav-sub">
@@ -341,7 +411,7 @@
                           </li>
                           <li>
                             <a href="/admin/contact/form">
-                              <span class="nav-text">Form</span>
+                              <span class="nav-text">Form Labels</span>
                             </a>
                           </li>
                           <li>
@@ -349,7 +419,12 @@
                               <span class="nav-text">Visit Us</span>
                             </a>
                           </li>
-                          
+
+                          <li>
+                            <a href="/admin/user_contact/">
+                              <span class="nav-text">User Contact</span>
+                            </a>
+                          </li>
                         </ul>
                     </li>
                   </ul>

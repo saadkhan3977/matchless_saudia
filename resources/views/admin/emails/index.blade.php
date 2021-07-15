@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('page-title')
-    Manage Home Missions Features Section
+    Manage Emails
 @endsection
 @section('mainContent')
 <style type="text/css">
@@ -27,13 +27,11 @@
 
           <div class="box">
           <div class="box-header">
-            <h3>Manage Home Missions Section</h3>
+            <h3>Manage Emails</h3>
                   <hr>
-          @if(count($data) < '8')
-            <a href="/admin/home/missions_features/create" class="btn btn-icon generalsetting_admin">
+            <a href="{{route('emails.create')}}" class="btn btn-icon generalsetting_admin">
                     <i class="fa fa-plus"></i>
                   </a>
-                  @endif
           </div>
     
     <div class="table-responsive">
@@ -41,26 +39,20 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th>Lang</th>
+            <th>Email</th>
             <th>Manage</th>
           </tr>
         </thead>
         <tbody>
           @if($data)
-          <?php $id = 1 ?>
+          <?php $id=1 ?>
           @foreach($data as $row)
           <tr>
             <td>{{$id++}}</td>
-            <td>{{$row->title}}</td>
-            <td>{{$row->description}}</td>
-            <td><img src="/uploads/home/{{$row->image}}" alt="{{$row->title}}"></td>
-            <td>{{$row->lang}}</td>
+            <td>{{$row->email}}</td>
             <td style="display: flex;">
-              <a style="margin-right: 10px;" class="btn btn-default generalsetting_admin" href="/admin/home/missions_features/{{$row->id}}"><i class="fa fa-edit "></i></a>
-              <form method="post" action="/admin/home/missions_features/{{$row->id}}">
+              <a style="margin-right: 10px;" class="btn btn-default generalsetting_admin" href="{{route('emails.show',$row->id)}}"><i class="fa fa-edit "></i></a>
+              <form method="post" action="{{route('emails.destroy',$row->id)}}">
                 @csrf
                 @method('delete')
               <button type="submit" onclick="return confirm('Are You Sure Want To Delete This..??')" class="btn btn-default generalsetting_admin"><i class="fa fa-trash "></i></button>
@@ -73,7 +65,6 @@
         </tbody>
       </table>
     </div>
-    
   </div>
       </div>
     </div>

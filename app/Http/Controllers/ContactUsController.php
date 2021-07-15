@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ContactUS;
 use App\Mail\ContactMail;
-use App\Models\AdminContactUs;
+use App\Models\Emails;
 use App\Models\ContactVisit;
 use App\Models\ContactQuestion;
 use App\Models\HomeContactUs;
@@ -39,10 +39,12 @@ class ContactUsController extends Controller
         $objDemo->subject = $request->subject;
         $objDemo->phone = $request->phone;
         $objDemo->description = $request->description;
-        $contacts = AdminContactUs::first();
+        $contacts = Emails::get();
         if($contacts)
         {
-            Mail::to($contacts->email)->send(new ContactMail($objDemo));
+            foreach($contacts as $row){
+                Mail::to($row->email)->send(new ContactMail($objDemo));
+            }
         }
         else
         {

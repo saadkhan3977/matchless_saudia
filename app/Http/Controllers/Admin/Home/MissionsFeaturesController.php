@@ -28,7 +28,22 @@ class MissionsFeaturesController extends Controller
     public function store(Request $request)
     {
 
-        HomeMissionsFeatures::create($request->all());
+        $imageName = null;
+        if($request->hasFile('image')) 
+        {
+            $ifiles = $request->file('image');
+            $idestinationPath = 'uploads/home'; // upload path
+            $imageName = date('YmdHis') . "." . $ifiles->getClientOriginalExtension();
+            $ifiles->move($idestinationPath, $imageName);
+        }
+        $data = [
+            'title' => $request->title,
+            'lang' => $request->lang,
+            'description' => $request->description,
+            'image' => $imageName,
+        ];
+
+        HomeMissionsFeatures::create($data);
         return redirect()->to('/admin/home/missions');
     }
 
@@ -41,8 +56,25 @@ class MissionsFeaturesController extends Controller
 
     public function Update(Request $request,$id)
     {
-        $project = HomeMissionsFeatures::find($id);
-        $project->update($request->all());
+        $homvideo = HomeMissionsFeatures::find($id);
+        // $project->update($request->all());
+        $currentImage = $homvideo->image;
+        $fileName = null;
+        if($request->hasFile('image')) 
+        {
+            $files = $request->file('image');
+            $destinationPath = 'uploads/home'; // upload path
+            $fileName = date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $fileName);
+        }
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => ($fileName) ? $fileName : $currentImage ,
+            'lang' => $request->lang,
+        ];
+
+        $homvideo->update($data);
         return redirect()->to('/admin/home/missions');
     }
 

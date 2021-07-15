@@ -5,9 +5,16 @@ namespace App\Http\Controllers\Admin\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ContactForm;
+use App\Models\ContactUs;
 
 class FormController extends Controller
 {
+    public function contact_us()
+    {
+        $data = ContactUs::get();
+        return view('admin.contact.contact_us.index')
+        ->with(compact('data'));
+    }
     public function index()
     {
         $data = ContactForm::get();

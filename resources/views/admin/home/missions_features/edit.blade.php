@@ -38,6 +38,10 @@
                   <input type="text" class="form-control" required="" id="exampleInputEmail1" name="title" value="{{$data->title}}" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Image</label>
+                  <input type="file" class="form-control" id="exampleInputEmail1" name="image" placeholder="Enter Title">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
                   <input type="text" class="form-control" required="" value="{{$data->description}}" id="exampleInputEmail1" name="description" placeholder="Enter Text">
                 </div>
@@ -53,6 +57,10 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">لقب</label>
                   <input type="text" class="form-control" value="{{$data->title}}" required="" id="exampleInputEmail1" name="title" placeholder="أدخل العنوان">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">صورة</label>
+                  <input type="file" class="form-control" id="exampleInputEmail1" name="image" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">وصف</label>
