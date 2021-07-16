@@ -40,10 +40,10 @@
                       <label for="exampleInputEmail1">Website</label>
                       <input type="text" class="form-control" name="website" required="" id="exampleInputEmail1" value="{{$data->website}}" placeholder="Enter Website Url">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">Services</label>
                       <input type="text" value="{{$data->service_id}}" class="form-control" name="service_id" required="" id="exampleInputEmail1" placeholder="Enter Sub Title">
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                       <label for="exampleInputEmail1">Image</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image">
@@ -83,10 +83,10 @@
                       <label for="exampleInputEmail1">موقع إلكتروني</label>
                       <input type="text" class="form-control" value="{{$data->website}}" name="website" required="" id="ar_website" placeholder="أدخل عنوان URL لموقع الويب">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="exampleInputEmail1">خدمات</label>
                       <input type="text" class="form-control" value="{{$data->service_id}}" name="service_id" required="" id="ar_service_id" placeholder="أدخل الخدمات">
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                       <label for="exampleInputEmail1">شعار</label>
                       <input type="file" class="form-control" id="ar_logo" name="logo">

@@ -73,7 +73,7 @@
 
     <section > 
       <div class="container">
-        <div class="mls-project animatable fadeInDown">
+        <div class="mls-project">
           <h3>{{ ($homwproject) ? $homwproject->title : null }}</h3>
           <p>{{ ($homwproject) ? $homwproject->description : null }}</p>
           <hr class="mls-hr">
@@ -125,7 +125,7 @@
     <section>
       <div class="mls-mission">
         <div class="container">
-         <div class="mls-mission-info animatable fadeInDown" >
+         <div class="mls-mission-info" >
           <h3>{{ ($homemissions) ? $homemissions->title : null }}</h3>
           <p>{{ ($homemissions) ? $homemissions->description : null }}</p>
           <hr class="mls-hr">
@@ -134,7 +134,7 @@
            <div class="row">
              @foreach($homemissionsfeatures as $roww)
                <div class="col-lg-6 col-md-6 col-sm-6">
-                 <div class="mission-details animatable fadeInDown">
+                 <div class="mission-details">
                    <img src="/uploads/home/{{$roww->image}}" alt="{{$roww->title}}">
                  <h5>{{$roww->title}}</h5>
                  <p>{{$roww->description}}</p>
