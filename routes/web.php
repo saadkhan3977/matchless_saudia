@@ -69,6 +69,11 @@ Route::group(['prefix' => 'blog'], function () {
 		Route::get('gallery_delete/{id}','GalleryController@destroy');
 		Route::get('gallery_show','GalleryController@get');
 		
+		// Consultancy
+		// Route::group(['prefix' => 'consultancy', 'namespace' => 'Consultancy'], function(){
+			Route::resource('/consultancy_sec_one','Consultancy\SecOneController');
+
+		// });
 		// Home Page Sections
 		Route::group(['prefix' => 'home', 'namespace' => 'Home'], function(){
 			Route::resource('video','VideoController');

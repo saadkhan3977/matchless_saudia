@@ -133,7 +133,8 @@
 
             let title = document.forms["enform"]["title"].value;
             if (title == "") {
-              form.title.focus();
+              $('#en_title').focus();
+              // form.title.focus();
               return false;
             }
 
@@ -149,11 +150,11 @@
               return false;
             }
 
-            let service = document.forms["enform"]["service_id"].value;
-            if (service == "") {
-              form.service_id.focus();
-              return false;
-            }
+            // let service = document.forms["enform"]["service_id"].value;
+            // if (service == "") {
+            //   form.service_id.focus();
+            //   return false;
+            // }
 
             let video = document.forms["enform"]["video"].value;
             if (video == "") {
@@ -203,11 +204,11 @@
               return false;
             }
 
-            let service = document.forms["arform"]["service_id"].value;
-            if (service == "") {
-              $('#ar_service_id').focus();
-              return false;
-            }
+            // let service = document.forms["arform"]["service_id"].value;
+            // if (service == "") {
+            //   $('#ar_service_id').focus();
+            //   return false;
+            // }
 
             let video = document.forms["arform"]["video"].value;
             if (video == "") {

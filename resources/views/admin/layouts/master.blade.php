@@ -353,12 +353,12 @@
                             </a>
                             <ul class="nav-sub">
                               <li>
-                                <a href="/admin/consultancy/sec_one">
+                                <a href="{{route('consultancy_sec_one.index')}}">
                                   <span class="nav-text">Section 1</span>
                                 </a>
                               </li>
                               <li>
-                                <a href="/admin/consultancy/sec_two">
+                                <a href="/admin/consultancy_sec_two">
                                   <span class="nav-text">Section 2</span>
                                 </a>
                               </li>

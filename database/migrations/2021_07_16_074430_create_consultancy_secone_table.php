@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactQuestionTable extends Migration
+class CreateConsultancySeconeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateContactQuestionTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_question', function (Blueprint $table) {
+        Schema::create('consultancy_sec_one', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->text('description')->nullable();
+            $table->string('subtitle')->nullable();
             $table->string('lang')->nullable();
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateContactQuestionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_question');
+        Schema::dropIfExists('consultancy_sec_one');
     }
 }

@@ -134,7 +134,7 @@
     <script> 
       function arsubmitForm() {
         var title= $('#ar_title').val();  
-        $.get("/admin/projects_slug?title="+title, function(data){
+        $.get("/admin/projects_slug?title="+title+'&lang=ar', function(data){
           if(data.data =='success')
           {
             var form = document.getElementById('arform');
@@ -166,13 +166,13 @@
               return false;
             }
 
-            let service = document.forms["arform"]["service_id"].value;
-            if (service == "") {
-              $('#ar_service_id').focus();
-              // form.service_id.focus();
-              // alert("Service must be filled out");
-              return false;
-            }
+            // let service = document.forms["arform"]["service_id"].value;
+            // if (service == "") {
+            //   $('#ar_service_id').focus();
+            //   // form.service_id.focus();
+            //   // alert("Service must be filled out");
+            //   return false;
+            // }
      
             let logo = document.forms["arform"]["logo"].value;
             if (logo == "") {
@@ -213,7 +213,7 @@
     <script> 
       function ensubmitForm() {
         var title= $('#en_title').val();  
-        $.get("/admin/projects_slug?title="+title, function(data){
+        $.get("/admin/projects_slug?title="+title+'&lang=en', function(data){
           if(data.data =='success')
           {
             var form = document.getElementById('enform');
@@ -225,7 +225,7 @@
 
             let title = document.forms["enform"]["title"].value;
             if (title == "") {
-              form.title.focus();
+              $('#en_title').focus();
               // alert("Category must be filled out");
               return false;
             }
@@ -244,12 +244,12 @@
               return false;
             }
 
-            let service = document.forms["enform"]["service_id"].value;
-            if (service == "") {
-              form.service_id.focus();
-              // alert("Service must be filled out");
-              return false;
-            }
+            // let service = document.forms["enform"]["service_id"].value;
+            // if (service == "") {
+            //   form.service_id.focus();
+            //   // alert("Service must be filled out");
+            //   return false;
+            // }
      
             let logo = document.forms["enform"]["logo"].value;
             if (logo == "") {
