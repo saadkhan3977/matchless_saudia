@@ -82,7 +82,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">المسمى الوظيفي</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
                       <input type="text" class="form-control" id="exampleInputEmail1" value="{{$data->position_title}}" name="position_title" required="" placeholder="أدخل عنوان الوظيفة">
                     </div>
                     

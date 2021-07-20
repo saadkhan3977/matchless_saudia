@@ -16,6 +16,8 @@ Route::get('/','HomeController@index');
 Route::get('/lang/{id}','HomeController@index');
 Route::get('/team','TeamController@index');
 Route::get('/team/lang/{id}','TeamController@index');
+Route::get('/consultancy','ConsultancyController@index');
+Route::get('/interior','InteriorController@index');
 Route::get('/about','AboutController@index');
 Route::get('/about/lang/{id}','AboutController@index');
 Route::get('/event/{id}','ScheduleController@index');
@@ -72,7 +74,20 @@ Route::group(['prefix' => 'blog'], function () {
 		// Consultancy
 		// Route::group(['prefix' => 'consultancy', 'namespace' => 'Consultancy'], function(){
 			Route::resource('/consultancy_sec_one','Consultancy\SecOneController');
+			Route::resource('/consultancy_sec_two','Consultancy\SecTwoController');
+			Route::resource('/consultancy_sec_three','Consultancy\SecThreeController');
 
+			Route::resource('/interior_sec_one','Interior\SecOneController');
+			Route::resource('/interior_sec_two','Interior\SecTwoController');
+			Route::post('/interior/sectwo_heading','Interior\SecTwoController@heading_post');
+			Route::put('/interior/sectwo_heading/{id}','Interior\SecTwoController@heading_update');
+			Route::delete('/interior/sectwo_heading/{id}','Interior\SecTwoController@heading_destroy');
+
+			Route::resource('/interior_sec_three','Interior\SecThreeController');
+			Route::resource('/interior_sec_four','Interior\SecFourController');
+			Route::post('/interior/secfour_heading','Interior\SecFourController@heading_post');
+			Route::put('/interior/secfour_heading/{id}','Interior\SecFourController@heading_update');
+			Route::delete('/interior/secfour_heading/{id}','Interior\SecFourController@heading_destroy');
 		// });
 		// Home Page Sections
 		Route::group(['prefix' => 'home', 'namespace' => 'Home'], function(){

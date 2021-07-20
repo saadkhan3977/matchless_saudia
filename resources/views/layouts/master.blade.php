@@ -362,6 +362,18 @@ $(document).scroll(function() {
        a = 1;
     }
 });
+// Consultancy
+  $('.hideservice').hide();
+  function show_services(argument) {
+    if($('.hideservice').hide())
+    {
+      $('.show-service-'+argument).show();
+    }
+    else
+    {
+      $('.hideservice').hide();
+    }
+  }
     </script>
     </body>
 </html>

@@ -1,7 +1,9 @@
+
+
+
 // jQuery(function($) {
 $(document).ready(function() {
   
-  // alert('d');
   // Function which adds the 'animated' class to any '.animatable' in view
   var doAnimations = function() {
     

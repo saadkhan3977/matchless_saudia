@@ -103,85 +103,6 @@
                     <span class="nav-text">Menu</span>
                   </a>
                 </li>
-                {{-- <li>
-                  <a href="/admin/manage-staff" >
-                    <span class="nav-icon">
-                      <i class="material-icons">perm_identity 
-                        <span ui-include="'/admin/assets/images/i_0.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Staff</span>
-                  </a>
-                </li> --}}
-                {{-- <li>
-                  <a href="/admin/services" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe8f0;
-                        <span ui-include="'/admin/assets/images/i_2.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Services</span>
-                  </a>
-                </li> --}}
-                {{-- <li>
-                  <a href="/admin/gallery" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe8f0;
-                        <span ui-include="'/admin/assets/images/i_2.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Gallery</span>
-                  </a>
-                </li> --}}
-                <li>
-                  <a href="/admin/emails" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe5c3;
-                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Emails</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/testimonial" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe5c3;
-                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Testimonial</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/jobs" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe5c3;
-                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Jobs</span>
-                  </a>
-                </li>
-                {{-- <li>
-                  <a href="/admin/schedule" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe5c3;
-                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
-                      </i>
-                    </span>
-                    <span class="nav-text">Schedule</span>
-                  </a>
-                </li> --}}
-                <li>
-                  <a href="/admin/team" >
-                    <span class="nav-icon">
-                      <i class="fa fa-users">
-                      </i>
-                    </span>
-                    <span class="nav-text">Manage Team</span>
-                  </a>
-                </li>
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -362,6 +283,11 @@
                                   <span class="nav-text">Section 2</span>
                                 </a>
                               </li>
+                              <li>
+                                <a href="/admin/consultancy_sec_three">
+                                  <span class="nav-text">Section 3</span>
+                                </a>
+                              </li>
                             </ul>
                           </li>
                           <li>
@@ -373,22 +299,22 @@
                             </a>
                             <ul class="nav-sub">
                               <li>
-                                <a href="/admin/interior/sec_one">
+                                <a href="{{route('interior_sec_one.index')}}">
                                   <span class="nav-text">Section 1</span>
                                 </a>
                               </li>
                               <li>
-                                <a href="/admin/interior/sec_two">
+                                <a href="{{route('interior_sec_two.index')}}">
                                   <span class="nav-text">Section 2</span>
                                 </a>
                               </li>
                               <li>
-                                <a href="/admin/interior/sec_three">
+                                <a href="{{route('interior_sec_three.index')}}">
                                   <span class="nav-text">Section 3</span>
                                 </a>
                               </li>
                               <li>
-                                <a href="/admin/interior/sec_four">
+                                <a href="{{route('interior_sec_four.index')}}">
                                   <span class="nav-text">Section 4</span>
                                 </a>
                               </li>
@@ -429,6 +355,86 @@
                     </li>
                   </ul>
                 </li>
+                {{-- <li>
+                  <a href="/admin/manage-staff" >
+                    <span class="nav-icon">
+                      <i class="material-icons">perm_identity 
+                        <span ui-include="'/admin/assets/images/i_0.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Staff</span>
+                  </a>
+                </li> --}}
+                {{-- <li>
+                  <a href="/admin/services" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe8f0;
+                        <span ui-include="'/admin/assets/images/i_2.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Services</span>
+                  </a>
+                </li> --}}
+                {{-- <li>
+                  <a href="/admin/gallery" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe8f0;
+                        <span ui-include="'/admin/assets/images/i_2.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Gallery</span>
+                  </a>
+                </li> --}}
+                <li>
+                  <a href="/admin/emails" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe5c3;
+                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Emails</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin/testimonial" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe5c3;
+                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Testimonial</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin/jobs" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe5c3;
+                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Jobs</span>
+                  </a>
+                </li>
+                {{-- <li>
+                  <a href="/admin/schedule" >
+                    <span class="nav-icon">
+                      <i class="material-icons">&#xe5c3;
+                        <span ui-include="'/admin/assets/images/i_1.svg'"></span>
+                      </i>
+                    </span>
+                    <span class="nav-text">Schedule</span>
+                  </a>
+                </li> --}}
+                <li>
+                  <a href="/admin/team" >
+                    <span class="nav-icon">
+                      <i class="fa fa-users">
+                      </i>
+                    </span>
+                    <span class="nav-text">Manage Team</span>
+                  </a>
+                </li>
+                
                 <li>
                   <a>
                     <span class="nav-caret">

@@ -81,7 +81,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">وصف</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="status" value="ACTIVE" hidden="">
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
                       <textarea name="description" required="" class="form-control" id="" cols="10" rows="10"></textarea>
                     </div>
                     
