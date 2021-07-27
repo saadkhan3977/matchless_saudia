@@ -6,13 +6,19 @@
     <link rel="stylesheet" href="/frontend/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/frontend/assets/css/style.css">
     <link rel="stylesheet" href="/frontend/assets/css/lity.min.css">
-    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
+    {{-- ABout Us --}}
+    <link href="/frontend/assets/css/lightgallery.css" rel="stylesheet">
+    {{-- Career --}}
     <link rel="stylesheet" href="/frontend/assets/css/slick.min.css">
+
+
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link rel="icon" href="/frontend/assets/img/favicon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <title>MLS | @yield('page-title')</title>
   </head>
-<?php
+  <?php
     $preloaders = new App\Models\GeneralSettingPreloader;
     $preloader = $preloaders::first();
 
@@ -41,7 +47,6 @@
             $logo = $logos::first();
           ?>
           <a class="navbar-brand cutom-logo" href="/"><img src="/uploads/logo/{{ ($logo) ? $logo->file : null}}"></a>
-          {{-- <a class="navbar-brand cutom-logo" href="/"><img src="/frontend/assets/img/head.png"></a> --}}
           <div class="search__digitalop d-block d-lg-none">
             <i class="fa fa-search search-btn search-btn-overlay"></i>
             <div class="searchblock search-overlay">
@@ -98,21 +103,39 @@
             <a href="/lang/ar"><img src="/frontend/assets/img/Saudi_Arabia.png" alt=""></a>
             <a href="/lang/en"><img src="/frontend/assets/img/us.png" alt=""></a>
           </div>
+          <?php
+            $links = new App\Models\SocialSettingLinks;
+            $link = $links::first();
 
+            $footers = new App\Models\GeneralSettingHeader;
+            if($langs =='ar'){
+              $footer = $footers::where('lang',$langs)->first();
+            }
+            else{
+              $footer = $footers::where('lang','en')->first();
+            }
+          ?>
             <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> -->
                   <div class="custom-digi mt-4 d-lg-none d-md-block d-sm-block">
-                    <h4>Contact US</h4>
-                    <p><span>Email : </span>contact@digitalopment.com</p>
-                    <p><span>Phone : </span>+ 92 333 433 229</p>
+                    <h4>{{ ($footer) ? $footer->title : null}}</h4>
+                        <p><span>{{ ($footer) ? $footer->email_label : null}} : </span>{{ ($footer) ? $footer->email : null}}</p>
+                        <p><span>{{ ($footer) ? $footer->phone_label : null}} : </span>{{ ($footer) ? $footer->phone : null}}</p>
                   </div>
                   <div class="follow-section d-lg-none d-md-block d-sm-block">
                 <div class="social-icons mt-3">
                   <ul>
-                    <li><a href="#"><i class="fab fa-facebook-f facebook-2"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin linkedin"></i></a></li>
-                    <li><a href="#"><i class="fab fa-whatsapp whatsapp"></i></a></li>
+                    @if($link) @if($link->facebook !='')
+                      <li><a href="{{$link->facebook}}"><i class="fab fa-facebook-f facebook-2"></i></a></li>
+                    @endif @endif
+                    @if($link) @if($link->twitter_status !='')
+                    <li><a href="{{$link->twitter}}"><i class="fab fa-twitter twitter"></i></a></li>
+                    @endif @endif
+                    @if($link) @if($link->linkedin_status !='')
+                    <li><a href="{{$link->linkedin}}"><i class="fab fa-linkedin linkedin"></i></a></li>
+                    @endif @endif
+                    @if($link) @if($link->whatsapp_status !='')
+                    <li><a href="{{$link->whatsapp}}"><i class="fab fa-whatsapp whatsapp"></i></a></li>
+                    @endif @endif
                   </ul>
                 </div>
               </div>
@@ -144,40 +167,32 @@
             <a href="/lang/en"><img src="/frontend/assets/img/us.png" alt=""></a>
           </div>
         </div>
-    <?php
-      $links = new App\Models\SocialSettingLinks;
-      $link = $links::first();
-
-      $footers = new App\Models\GeneralSettingHeader;
-      if($langs =='ar'){
-        $footer = $footers::where('lang',$langs)->first();
-      }
-      else{
-        $footer = $footers::where('lang','en')->first();
-      }
-    ?>
+      </nav>
+    </header>
     <div class="side-icon-bar">
       <p>{{ ($footer) ? $footer->getintouch : null}}</p>
       {{-- @if($link) @if($link->facebook_status !='')
       <a href="{{$link->facebook}}" class="facebook"><i class="fab fa-facebook-f"></i></a> 
       @endif @endif --}}
       @if($link) @if($link->facebook !='')
-      <a href="{{$link->facebook}}"><i class="fab fa-facebook facebook"></i></a>
+      <a href="{{$link->facebook}}"><i class="fab fa-facebook-f"></i></a>
       @endif @endif
       @if($link) @if($link->twitter_status !='')
-      <a href="{{$link->twitter}}"><i class="fab fa-twitter twitter"></i></a>
+      <a href="{{$link->twitter}}"><i class="fab fa-twitter "></i></a>
       @endif @endif
       @if($link) @if($link->linkedin_status !='')
-      <a href="{{$link->linkedin}}"><i class="fab fa-linkedin linkedin"></i></a>
+      <a href="{{$link->linkedin}}"><i class="fab fa-linkedin"></i></a>
       @endif @endif
       @if($link) @if($link->whatsapp_status !='')
-      <a href="{{$link->whatsapp}}"><i class="fab fa-youtube youtube"></i></a>
+      <a href="{{$link->whatsapp}}"><i class="fab fa-youtube"></i></a>
       @endif @endif
-      </nav>
-    </header>
+      &nbsp;
+    </div>
+    <section>
 
     @yield('mainContent')
-
+    <a href="#" id="scroll" style="display: none;">
+          <i class="fa fa-chevron-up"></i></a>
     <footer>
       <div class="footer-main">
         <div class="container max-con">
@@ -185,8 +200,7 @@
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
               <div class="digi-section">
                 <div class="digi-logo">
-                  <a href="/"><img src="/uploads/logo/{{ ($logo) ? $logo->file : null}}" alt="MLS Logo"></a>
-                  {{-- <a href="/"><img src="/frontend/assets/img/footer.png" alt="Logo"></a> --}}
+                  <a href="/"><img src="/frontend/assets/img/footer.png" alt="Logo"></a>
                 </div>
                 <div class="footer-content">
                   <div class="row">
@@ -238,9 +252,9 @@
                       <div class="site-main">
                         <h5>Our Projects</h5>
                         <ul>
-                          <li><a href="/">0-Kazu</a></li>
-                          <li><a href="#">Dekan Chapati</a></li>
-                          <li><a href="#">Amaly</a></li>
+                          <li><a href="projectinside.html">0-Kazu</a></li>
+                          <li><a href="coming.html">Dekan Chapati</a></li>
+                          <li><a href="coming.html">Amaly</a></li>
                         </ul>
                       </div>
                     </div>
@@ -303,79 +317,85 @@
             <div class="col-12">
               <div class="term-text">
                 <p>{{ ($footer) ? $footer->copyright : null}}</p>
-                {{-- <p>Copyright © 2021 Matchlesssaudia (Pvt. ltd)</p> --}}
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    
-<div class="overlay">saad</div>
-     
- 
-              
 
-    {{-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> --}}
-    <script src="/frontend/assets/js/gsap.min.js"></script>
     <script src="/frontend/assets/js/jquery.min.js"></script>
     <script src="/frontend/assets/js/popper.min.js"></script>
     <script src="/frontend/assets/js/script.js"></script>
     <script src="/frontend/assets/js/bootstrap.min.js"></script>
     <script src="/frontend/assets/js/lity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="/frontend/assets/js/career.js"></script>
+   
     <script src="/frontend/assets/js/index.js"></script>
+    {{-- Career --}}
+    <script src="/frontend/assets/js/career.js"></script>
+    <script src="/frontend/assets/js/slick.min.js"></script>
+    <script src="/frontend/assets/js/gsap.min.js"></script>
+
+    {{-- About US --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/frontend/assets/js/about.js"></script>
-     <script src="/frontend/assets/js/slick.min.js"></script>
-    <script type="text/javascript">
-      // CAREER SLICK SLIDER JS START
-$(document).ready(function() {
-  // alert('sdas');
-    $('.rtl-slider-2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-        fade: true,
-        asNavFor: '.rtl-slider-nav-2'
-    });
-    $('.rtl-slider-nav-2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        vertical: true,
-        asNavFor: '.rtl-slider-2',
-        centerMode: false,
-        focusOnSelect: true,
-        prevArrow: ".thumb-prev",
-        nextArrow: ".thumb-next",
-    });
-});
-// About Svg line
-var a = 0;
-$(document).scroll(function() {
-  // alert('asd');
-    var oTop = $('#aboutline').offset().top - window.innerHeight;
-    if (a == 0 && $(window).scrollTop() > oTop) {
-      $('#aboutline').append('<svg xmlns="http://www.w3.org/2000/svg" width="1925.433" height="483.38" viewBox="0 0 1925.433 483.38"><defs><style>.line2{fill:none;stroke:#d6b874;stroke-linecap:round;stroke-width:3px;}</style></defs><path class="line2" d="M-17844-10270.828S-17437-9975-17162-10145s44-189-62-91-140,246,127,184,1173-464,1173-464" transform="translate(17846.793 10518.64)"/></svg>')
-       a = 1;
-    }
-});
-// Consultancy
-  $('.hideservice').hide();
-  function show_services(argument) {
-    if($('.hideservice').hide())
-    {
-      $('.show-service-'+argument).show();
-    }
-    else
-    {
-      $('.hideservice').hide();
-    }
-  }
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="/frontend/assets/js/lg-rotate.js"></script>
+    <script>
+      lightGallery(document.getElementById('lightgallery'));
     </script>
+
+     {{-- Project Inside --}}
+    <script src="https://cdn2.hubspot.net/hub/322787/hub_generated/style_manager/1440007714979/custom/page/hack-a-thon-3/masonry.min.min.js"></script>
+    <script src="https://cdn2.hubspot.net/hub/322787/hub_generated/style_manager/1440007849180/custom/page/hack-a-thon-3/isotope.min.js"></script>
+    <script src="/frontend/assets/js/projectinside.js"></script>
+
+    <script>
+  $( function() {
+  var $grid = $('.grid').isotope({
+    itemSelector: 'article'
+  });
+
+  // filter buttons
+  $('.filters-button-group').on( 'click', 'button', function() {
+    var filterValue = $( this ).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+  });
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+});
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    timeout = setTimeout( delayed, threshold || 100 );
+  }
+}
+
+$(window).bind("load", function() {
+  $('#all').click();
+});
+</script>
     </body>
 </html>
-
-

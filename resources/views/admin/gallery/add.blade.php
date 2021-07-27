@@ -41,7 +41,7 @@
         <div class="box">
           <div class="box-divider m-0"></div>
             <div class="box-body">
-              <form method="post" enctype="multipart/form-data" action="/admin/gallery_store/{{$id}}"class="dropzone"id="my-awesome-dropzone">@csrf</form>
+              <form method="post" enctype="multipart/form-data" action="/admin/gallery" class="dropzone"id="my-awesome-dropzone">@csrf</form>
             </div>
           </div>
             <div class="main-div">
@@ -63,7 +63,7 @@
        maxFilesize: 10,
        success: function (file, response) {
         $.ajax({
-            url: "/admin/gallery_show/",
+            url: "/admin/gallery/show/",
             type: "get",
             cache: false,
             dataType: 'json',
@@ -81,7 +81,7 @@
     if (confirm('Are You Sure??')) {
       // alert('true');
       $('.hide-'+argument).hide();
-      $.get('/admin/gallery_delete/'+argument, 
+      $.get('/admin/gallery/delete/'+argument, 
         function( data ) 
         {
         }

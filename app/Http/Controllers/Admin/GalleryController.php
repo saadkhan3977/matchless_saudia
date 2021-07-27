@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
+use File;
 
 class GalleryController extends Controller
 {
@@ -16,7 +17,7 @@ class GalleryController extends Controller
     public function index()
     {
         $gallerys = Gallery::get();
-        return view('admin.gallery.index')
+        return view('admin.gallery.add')
         ->with(compact('gallerys'));
     }
 
@@ -44,22 +45,19 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id,Request $request)
+    public function store(Request $request)
     {
-        // dd($request->file);
-        if($request->hasFile('file')) 
-        {
-            $vfiles = $request->file('file');
-            $vdestinationPath = 'uploads/gallery'; // upload path
-            $imageName = date('YmdHis') . "." . $vfiles->getClientOriginalExtension();
-            $vfiles->move($vdestinationPath, $imageName);
-        }
+        $imagepath = 'uploads/gallery'; // upload path
 
-        $data = [
-            'project_id' => $id,
-            'image' => $imageName,
-        ];
-        Gallery::create($data);
+        $image = $request->file('file');
+        $avatarName = date('His') . "." . rand(10000000000,1000000000) . $image->getClientOriginalExtension();
+        // $avatarName = $image->getClientOriginalName();
+        $image->move($imagepath,$avatarName);
+         
+        $imageUpload = new Gallery();
+        $imageUpload->image = $avatarName;
+        $imageUpload->save();
+        return response()->json(['success'=>$avatarName]);
     }
 
     /**
@@ -70,8 +68,8 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        $gallerys = Gallery::get();
-        return view('admin.gallery.add')->with(compact('id','gallerys'));
+        $gallerys = Gallery::orderBy('id','DESC')->get();
+        return json_encode(array('data'=>$gallerys));
     }
 
     /**
@@ -106,9 +104,9 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $gallery = Gallery::find($id);
-        $file = '/uploads/gallery/'.$gallery->image; 
-        $gallery->delete();
+        $file = 'uploads/gallery/'.$gallery->image; 
         File::delete($file);
+        $gallery->delete();
 
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProjectsPageDescription;
 use App\Models\Projects;
-use App\Models\Gallery;
+use App\Models\ProjectGallery;
 use Illuminate\Support\Str; 
 
 class ProjectsController extends Controller
@@ -30,7 +30,7 @@ class ProjectsController extends Controller
         $title = str_replace("-"," ",Str::slug($id));
         // print_r($id);die;
     	$data = Projects::where('slug',$id)->first();
-    	$gallery = Gallery::where('project_id',$data->id)->get();
+    	$gallery = ProjectGallery::where('project_id',$data->id)->get();
     	$projects = Projects::get();
 
     	return view('project_detail')

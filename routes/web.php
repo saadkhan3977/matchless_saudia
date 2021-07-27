@@ -60,16 +60,21 @@ Route::group(['prefix' => 'blog'], function () {
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 		Route::get('/user_contact','Contact\FormController@contact_us');
 		Route::resource('emails','EmailsController');
-		Route::resource('gallery','GalleryController');
+		Route::get('/gallery','GalleryController@index');
+		Route::post('/gallery','GalleryController@store');
+		Route::get('/gallery/show','GalleryController@get');
+		Route::get('/gallery/delete/{id}','GalleryController@destroy');
+
 		Route::resource('/testimonial','TestimonialController');
 		Route::resource('/schedule','ScheduleController');
 		Route::resource('/jobs','JobsController');
 		Route::resource('/team','TeamController');
 		Route::resource('/team_title','TeamTitleController');
 
-		Route::post('gallery_store/{id}','GalleryController@store');
-		Route::get('gallery_delete/{id}','GalleryController@destroy');
-		Route::get('gallery_show','GalleryController@get');
+		Route::get('project-gallery/{id}','ProjectGalleryController@create');
+		Route::post('project-gallery_store/{id}','ProjectGalleryController@store');
+		Route::get('project-gallery_delete/{id}','ProjectGalleryController@destroy');
+		Route::get('project-gallery_show','ProjectGalleryController@get');
 		
 		// Consultancy
 		// Route::group(['prefix' => 'consultancy', 'namespace' => 'Consultancy'], function(){

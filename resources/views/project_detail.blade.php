@@ -3,6 +3,7 @@
     Projects {{$data->title}}
 @endsection
 @section('mainContent')
+
 <section>
   <div class="pinside-main" style="background-image: url(../uploads/project/{{$data->logo}});">
     <div class="scroll-downs">
@@ -16,25 +17,57 @@
     </div>
   </div>
 </section>
+
 <section>
+    <div class="container">
+      <div class="inside-pro">
+        <br>
+<section id="grid-container" class="transitions-enabled fluid masonry js-masonry grid">
+    <article class=" animatable fadeInDown">
+        <img src="/frontend/assets/img/opi1.jpg" class="img-responsive" />
+    </article>
+    <article class=" animatable fadeInDown">
+        <img src="/frontend/assets/img/opi2.jpg" class="img-responsive" />
+    </article>
+
+
+    </section>
+       </div>
+      </div>
+   </section>
+
+{{-- <section>
+  <div class="container">
+    <div class="inside-pro">
+      <section id="grid-container" class="transitions-enabled fluid masonry js-masonry grid">
+        @foreach($gallery as $row)
+        <article class="animatable fadeInDown">
+            <img src="/uploads/gallery/{{$row->image}}" class="img-responsive" />
+        </article>
+        @endforeach
+      </section>
+    </div>
+  </div>
+</section> --}}
+{{-- <section>
     <div class="container">
       <div class="inside-pro">
 <section id="grid-container" class="transitions-enabled fluid masonry js-masonry grid">
   @foreach($gallery as $row)
     <article>
               <img src="/uploads/gallery/{{$row->image}}"  class="img-responsive">
-        {{-- <img src="assets/img/pi1.png" class="img-responsive" /> --}}
+        {{-- <img src="assets/img/pi1.png" class="img-responsive" />
     </article>
       @endforeach
     </section>
         
        </div>
       </div>
-   </section>
+   </section> --}} 
 
    <section>
      <div class="container">
-       <div class="inside-main">
+       <div class="inside-main animatable fadeInDown">
          <p class="project-1">project info</p>
          <h2>Main Description</h2>
          <p>{{$data->description}}</p>
@@ -44,26 +77,26 @@
    <section>
      <div class="container">
        <div class="inside-details">
-         <div class="row">
+         <div class="row animatable fadeInDown">
            <div class="col-lg-3 col-md-3 col-sm-12">
              <h5>Client</h5>
              <p>{{$data->title}}</p>
            </div>
-           <div class="col-lg-3 col-md-3 col-sm-12">
+           {{-- <div class="col-lg-3 col-md-3 col-sm-12">
              <h5>Date</h5>
              <p>{{$data->created_at}}</p>
-           </div>
+           </div> --}}
            <div class="col-lg-3 col-md-3 col-sm-12">
              <h5>Website</h5>
              <a href="{{$data->website}}"><p>{{$data->website}}</p></a>
            </div>
-           <div class="col-lg-3 col-md-3 col-sm-12">
+           {{-- <div class="col-lg-3 col-md-3 col-sm-12">
              <h5>Services</h5>
              <a href="#"><p>SEO, Web Design, Branding, Social Media Marketing</p></a>
-           </div>
+           </div> --}}
          </div>
          <br>
-        <a href="{{$data->video}}" class=" video-popup mfp-iframe" data-lity> <img class="play-thumb" src="/frontend/assets/img/play.png"></a>
+        <a href="{{$data->video}}" class="animatable fadeInDown video-popup mfp-iframe" data-lity> <img class="play-thumb" src="/frontend/assets/img/play.png"></a>
          <img src="/uploads/project/{{$data->image}}">
          <div class="like-share">
            <a href="#"><button type="button" class="btn btn-light"><i class="fas fa-heart"></i>0</button></a>

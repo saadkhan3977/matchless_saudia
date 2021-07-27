@@ -22,6 +22,7 @@ class CreateAboutSecThreeTable extends Migration
             $table->text('sub_description')->nullable();
             $table->string('image')->nullable();
             $table->text('video_url')->nullable();
+            $table->string('button_text')->nullable();
             $table->text('lang')->nullable();
             $table->timestamps();
         });

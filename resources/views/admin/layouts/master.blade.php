@@ -32,7 +32,9 @@
   <link rel="stylesheet" href="/admin/assets/styles/app.css" type="text/css" />
   <!-- endbuild -->
   <link rel="stylesheet" href="/admin/assets/styles/font.css" type="text/css" />
-
+<!-- DataTables -->
+  <link rel="stylesheet" href="/admin/assets/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/assets/datatables-responsive/css/responsive.bootstrap4.min.css">
   {{-- Editor --}}
   <!-- include libraries(jQuery, bootstrap) -->
 
@@ -355,16 +357,16 @@
                     </li>
                   </ul>
                 </li>
-                {{-- <li>
-                  <a href="/admin/manage-staff" >
+                <li>
+                  <a href="/admin/gallery" >
                     <span class="nav-icon">
                       <i class="material-icons">perm_identity 
                         <span ui-include="'/admin/assets/images/i_0.svg'"></span>
                       </i>
                     </span>
-                    <span class="nav-text">Manage Staff</span>
+                    <span class="nav-text">Manage Gallery</span>
                   </a>
-                </li> --}}
+                </li>
                 {{-- <li>
                   <a href="/admin/services" >
                     <span class="nav-icon">
@@ -1113,6 +1115,58 @@ $('#search').on('keyup',function(){
 </script>
 <script type="text/javascript">
 $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+</script>
+<!-- DataTables -->
+<script src="/admin/assets/datatables/jquery.dataTables.min.js"></script>
+<script src="/admin/assets/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/admin/assets/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/admin/assets/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example3').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'print'
+        ]
+    } );
+} );
+          // jQuery.noConflict();
+//   $(function () {
+      jQuery(function ($){
+      $.noConflict();
+    // $('.select2').select2()
+    // //Initialize Select2 Elements
+    // $('.select2bs4').select2({
+    // theme: 'bootstrap4'
+    // })
+    
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "paging": false,
+      "ordering": false,
+      "info": false,
+    });
+    $('#example2').DataTable({
+      "paging": false,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": false,
+      "info": false,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    
+    // $('#dataexample').DataTable( {
+    //     dom: 'Bfrtip',
+    //     buttons: [
+    //         'copyHtml5',
+    //         'excelHtml5',
+    //         'csvHtml5',
+    //         'pdfHtml5'
+    //     ]
+    // });
+  });
 </script>
 </body>
 </html>

@@ -39,6 +39,9 @@ Gallery
   </div>
 </div>
     </section>
+    <div class="gallery-btn">
+      <a href="/about"><button type="button" class="btn btn-outline-light">Back</button></a>
+    </div>
             <!--div> -->
           </div>
         </div>

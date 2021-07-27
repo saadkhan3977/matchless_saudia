@@ -30,8 +30,8 @@
               <hr>
               <a href="{{route('projects.create')}}" class="btn btn-icon generalsetting_admin"><i class="fa fa-plus"></i></a>
           </div>
-          <div class="table-responsive" style="height: 100%">
-            <table class="table table-striped b-t">
+          <div class="table-responsive" style="height: 305px">
+            <table id="example2" class="table table-striped b-t">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -39,7 +39,7 @@
                   <th>Category</th>
                   <th>Gallery</th>
                   <th>Website</th>
-                  <th>Services</th>
+                  {{-- <th>Services</th> --}}
                   <th>Image</th>
                   <th>Logo</th>
                   <th>Video</th>
@@ -49,16 +49,17 @@
               </thead>
               <tbody>
                 @if($data)
+                <?php $id =1 ?>
                 @foreach($data as $row)
                 <tr>
-                  <td>{{$row->id}}</td>
+                  <td>{{$id++}}</td>
                   <td>{{$row->title}}</td>
                   <td>{{$row->category}}</td>
                   <td>
-                    <a href="/admin/gallery/{{$row->id}}" class="btn btn-default generalsetting_admin"> <i class="fa fa-plus"></i></a>
+                    <a href="/admin/project-gallery/{{$row->id}}" class="btn btn-default generalsetting_admin"> <i class="fa fa-plus"></i></a>
                   </td>
                   <td>{{$row->website}}</td>
-                  <td>{{$row->service_id}}</td>
+                  {{-- <td>{{$row->service_id}}</td> --}}
                   <td><img width="150" height="100" src="/uploads/project/{{$row->image}}" alt="{{$row->title}}"></td>
                   <td><img width="150" height="100" src="/uploads/project/{{$row->logo}}" alt="{{$row->title}}"></td>
                   <td>{{$row->video}}</td>

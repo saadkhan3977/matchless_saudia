@@ -42,6 +42,7 @@ class SecThreeController extends Controller
             'sub_title' => $request->sub_title,
             'sub_description' => $request->sub_description,
             'video_url' => $request->video_url,
+            'button_text' => $request->button_text,
             'lang' => $request->lang,
             'image' => $imageName,
         ];
@@ -80,6 +81,7 @@ class SecThreeController extends Controller
             'sub_title' => $request->sub_title,
             'sub_description' => $request->sub_description,
             'video_url' => $request->video_url,            
+            'button_text' => $request->button_text,
             'image' => ($imageName) ? $imageName : $currentimage,            
             'lang' => $request->lang,
         ];
@@ -91,8 +93,8 @@ class SecThreeController extends Controller
     public function destroy($id)
     {
         $project = AboutSecThree::find($id);
-        // $imagepath = 'uploads/about/'. $project->image;
-        // File::delete($imagepath);
+        $imagepath = 'uploads/about/'. $project->image;
+        File::delete($imagepath);
         $project->delete();
         return redirect()->to('/admin/about/about_sec_three');
     }

@@ -30,7 +30,7 @@ Blog
               <p>{{$blog->description}}</p>
               <div class="row">
                 <div class="col-6">
-                  <a href="/blog/{{Str::slug($blog->title,'-')}}"><button type="button" class="btn btn-link">Read more <i class="fas fa-arrow-right"></i></button></a>
+                  <a href="/blog/{{Str::slug($blog->title,'-')}}"><button type="button" class="btn btn-link"><?php echo ($blog->lang=='en') ? 'READ MORE' : 'قراءة المزيد' ; ?> <i class="fas fa-arrow-right"></i></button></a>
                 </div>
                 <div class="col-6">
                   <div class="bloginside__share">

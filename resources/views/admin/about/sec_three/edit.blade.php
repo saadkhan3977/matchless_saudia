@@ -50,10 +50,10 @@
                       <label for="exampleInputEmail1">Image</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image">
                     </div>
-                    {{-- <div class="form-group">
-                      <label for="exampleInputEmail1">Video Url</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="video_url" value="{{$data->video_url}}" required="" placeholder="Enter Link">
-                    </div> --}}
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Button Text</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="button_text" value="{{$data->button_text}}" required="" placeholder="Enter Button Text">
+                    </div>
                     
                     <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
                     <a href="{{ route('about_sec_three.index') }}" class="btn white m-b generalsetting_admin">Cancel</a>
@@ -89,6 +89,10 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">صورة</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">زر كتابة</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="button_text" value="{{$data->button_text}}" required="" placeholder="أدخل نص الزر">
                     </div>
                     {{-- <div class="form-group">
                       <label for="exampleInputEmail1">رابط الفيديو</label>

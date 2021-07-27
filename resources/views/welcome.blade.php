@@ -1,12 +1,10 @@
-	@extends('layouts.master')
+@extends('layouts.master')
 @section('page-title')
   Home
 @endsection
 @section('mainContent')
-    <section>
       <div class="mls-home-back">
         <video src="/uploads/home/{{ ($videodata) ? $videodata->background_video : null}}" playsinline autoplay muted loop id="bgvideo"></video>
-        {{-- <video src="assets/bg.mp4" playsinline autoplay muted loop id="bgvideo"></video> --}}
         <div class="container">
           <div class="home-main-content">
            <div class="row">
@@ -16,10 +14,51 @@
                 <p>{{ ($videodata) ? $videodata->sub_title : null}}</p>
                 <hr>
                 <h2>{{ ($videodata) ? $videodata->description : null}}</h2>
-                {{-- <a href="#"><button type="button" class="btn btn-light">FREE CONSULTATION</button></a> --}}
-                <a href="{{ ($videodata) ? $videodata->link : null }}"><button type="button" class="btn btn-light">{{ ($videodata) ? $videodata->button_text : null }}</button></a>
+                <a href="#"><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ ($videodata) ? $videodata->button_text : null }}</button></a>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ ($videodata) ? $videodata->button_text : null }}</h5>
+                        <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-back modal-form">
+                        <form>
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Name *</label>
+                                <input type="text" class="form-control" placeholder="Your Full Name">
+                              </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Email *</label>
+                                <input type="text" class="form-control" placeholder="Your Email">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Phone *</label>
+                                <input type="number" class="form-control" placeholder="Your Phone Number">
+                              </div>
+                            </div>
+                          </div>
+                            <div class="form-group mb-0">
+                              <label for="exampleFormControlTextarea1">Comment</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write Your message here"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-light">submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <img src="/frontend/assets/img/shape.png">
-                {{-- <img src="assets/img/shape.png"> --}}
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -32,7 +71,7 @@
                       <div class="about-waves wave-3"></div>
                     </div>
                   </div>
-                  <a href="https://www.youtube.com/watch?v=J8Bo5rJNlp4" class="about-video video-popup mfp-iframe" data-lity><i class="fa fa-play"></i></a>
+                  <a href="{{ ($videodata) ? $videodata->video_url : null }}" class="about-video video-popup mfp-iframe" data-lity><i class="fa fa-play"></i></a>
                 </div>
               </div>
             </div>
@@ -41,11 +80,10 @@
         </div>
       </div>
     </section>
-
     <section>
       <div class="thumbnail-back ">
         <div class="container" >
-          <div class="thumbnail-info mb-lg-5  ">
+          <div class="thumbnail-info mb-lg-5 animatable fadeInDown">
           <h3>{{ ($homehospitalityconsultancy) ? $homehospitalityconsultancy->title : null }}</h3>
           <p>{{ ($homehospitalityconsultancy) ? $homehospitalityconsultancy->description : null }}</p>
           <hr>
@@ -57,7 +95,7 @@
                 @foreach($sectwo as $row)
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <a href="{{$row->video}}" class=" video-popup mfp-iframe" data-lity>
-                  <div class="newimgvideo" style="background-image: url(/uploads/home/{{$row->image}});">
+                  <div class="newimgvideo animatable fadeInDown" style="background-image: url(/uploads/home/{{$row->image}});">
                     <img src="/frontend/assets/img/play.png" alt="">
                     <h3>{{$row->title}}</h3>
                     <p>{{$row->description}}</p>
@@ -70,7 +108,6 @@
         </div>
       </div>
     </section>
-
     <section > 
       <div class="container">
         <div class="mls-project">
@@ -125,7 +162,7 @@
     <section>
       <div class="mls-mission">
         <div class="container">
-         <div class="mls-mission-info" >
+         <div class="mls-mission-info animatable fadeInDown" >
           <h3>{{ ($homemissions) ? $homemissions->title : null }}</h3>
           <p>{{ ($homemissions) ? $homemissions->description : null }}</p>
           <hr class="mls-hr">
@@ -134,7 +171,7 @@
            <div class="row">
              @foreach($homemissionsfeatures as $roww)
                <div class="col-lg-6 col-md-6 col-sm-6">
-                 <div class="mission-details">
+                 <div class="mission-details animatable fadeInDown">
                    <img src="/uploads/home/{{$roww->image}}" alt="{{$roww->title}}">
                  <h5>{{$roww->title}}</h5>
                  <p>{{$roww->description}}</p>
@@ -149,7 +186,7 @@
     <section>
       <div class="mls-contact-main">
         <div class="container">
-          <div class="mlscontact-info">
+          <div class="mlscontact-info animatable fadeInDown" >
            <h3>{{ ($contacts) ? $contacts->title : null}}</h3>
            <p>{{ ($contacts) ? $contacts->description : null}}</p>
           </div>
@@ -161,7 +198,7 @@
                 </div>
               </div>
               <div class="col-lg-7 col-md-6">
-                <div class="form-back">
+                <div class="form-back animatable fadeInDown">
                    @if (\Session::has('success_contact'))
                 <div class="alert alert-success">
                   <p>{{ \Session::get('success_contact') }}</p>
@@ -215,4 +252,5 @@
             </div>
       </div>
     </section>
-@endsection
+    @endsection
+

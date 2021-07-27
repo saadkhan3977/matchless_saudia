@@ -27,6 +27,7 @@ class AboutController extends Controller
         $sectwo = AboutSecTwo::where('lang',$lang)->get();
         $teams = Team::where('lang',$lang)->take(3)->get();
         $events = Blog::where('lang',$lang)->where('event','on')->get();
+        $blogs = Blog::where('lang',$lang)->get();
         $secthree = AboutSecThree::where('lang',$lang)->first();
         $secfourheading = AboutSecFourHeading::where('lang',$lang)->first();
         $secfiveheading = AboutSecFiveHeading::where('lang',$lang)->first();
@@ -37,6 +38,6 @@ class AboutController extends Controller
         $aboublog = AboutBlog::where('lang',$lang)->first();
 
     	return view('about')
-    	->with(compact('secone','sectwo','secthree','secfourheading','secfiveheading','secsix','gallerys','testimonials','galleryheading','aboublog','teams','events'));
+    	->with(compact('secone','sectwo','secthree','secfourheading','secfiveheading','secsix','gallerys','testimonials','galleryheading','aboublog','teams','events','blogs'));
     }
 }

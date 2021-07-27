@@ -22,7 +22,8 @@ About
             <div class="about-caro-info">
               <h2>{{$row->title}}</h2>
               <p>{{$row->description}}</p>
-              <a href="{{$row->link}}"><button type="button" class="btn btn-light">{{$row->link_text}}</button></a>
+              {{-- <a href="{{$row->link}}"><buttontype="button" class="btn btn-light fade-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">{{$row->link_text}}</button></a> --}}
+              <a href="#"><button type="button" class="btn btn-light fade-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">{{$row->link_text}}</button></a>
               <img src="/frontend/assets/img/shape.png">
             </div>
             </div>
@@ -49,6 +50,50 @@ About
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">FREE CONSULTATION</h5>
+                        <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-back modal-form">
+                        <form>
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Name *</label>
+                                <input type="text" class="form-control" placeholder="Your Full Name">
+                              </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Email *</label>
+                                <input type="text" class="form-control" placeholder="Your Email">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="form-group mb-0">
+                                <label for="exampleInputEmail1">Your Phone *</label>
+                                <input type="number" class="form-control" placeholder="Your Phone Number">
+                              </div>
+                            </div>
+                          </div>
+                            <div class="form-group mb-0">
+                              <label for="exampleFormControlTextarea1">Comment</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write Your message here"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-light">submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
     </section>
     <section>
       <div class="container">
@@ -57,7 +102,7 @@ About
           @if(!empty(json_decode($sectwo)))
           @foreach($sectwo as $row => $value)
           <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="about-details">
+            <div class="about-details animatable fadeInDown">
               <img src="/uploads/about/{{$value->image}}">
               <h6>{{$value->title}}</h6>
               <p>{{$value->description}}</p>
@@ -74,7 +119,7 @@ About
         <div class="about-speck">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="about-speck-info">
+              <div class="about-speck-info animatable fadeIn">
                <div class="about-play-btn">
                 <div class="video-main">
                   <div class="promo-video">
@@ -96,7 +141,8 @@ About
                 <br><br-lg>
                 <h5>{{($secthree) ? $secthree->sub_title : null}}</h5>
                 <p>{{($secthree) ? $secthree->sub_description : null}}</p>
-                <button type="button" class="btn btn-light">FREE CONSULTATION</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">{{($secthree) ? $secthree->button_text : null}}</button>
+                {{-- <button type="button" class="btn btn-light">FREE CONSULTATION</button> --}}
               </div>
             </div>
           </div>
@@ -107,7 +153,7 @@ About
     <section>
       <div class="schedule-back">
         <div class="container">
-          <div class="schedule-info">
+          <div class="schedule-info animatable fadeInDown">
             <h3>{{($secfourheading) ? $secfourheading->title : null}}</h3>
             <p>{{($secfourheading) ? $secfourheading->description : null}}</p>
              <div class="owl-carousel my-carousel about-owl">
@@ -138,7 +184,7 @@ About
 
     <section>
         <div class="container">
-          <div class="team-info">
+          <div class="team-info animatable fadeInDown">
            <h3>{{($secfiveheading) ? $secfiveheading->title : null}}</h3>
             <p>{{($secfiveheading) ? $secfiveheading->description : null}}</p>
           </div>
@@ -177,7 +223,7 @@ About
         <div class="ceomass">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="ceo-info">
+              <div class="ceo-info animatable fadeInDown">
                 <h2>{{($secsix) ? $secsix->title : null}}</h2>
                 <p>{{($secsix) ? $secsix->description : null}}</p>
                 <br><br>
@@ -197,48 +243,47 @@ About
           </div>
     </section>
     <section>
-      <div class="container max-con">
-        <div class="our-gallery">
-          <h3>{{($galleryheading) ? $galleryheading->title : null}}</h3>
-          <p>{{($galleryheading) ? $galleryheading->description : null}}</p>
+      <div class="container">
+        <div class="our-gallery ">
+          <h3>OUR GALLERY</h3>
+          <p>Welcome to MLS!<br> This is our gallery check it out. </p>
           <br>
           <div class="row">
-              <section id="grid-container" class="transitions-enabled fluid masonry js-masonry grid">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <section id="grid-container" class="transitions-enabled fluid masonry js-masonry grid-2">
   <div class="cont">
   <div class="demo-gallery">
     <ul id="lightgallery">
       @if($gallerys)
       <?php $id='1' ?>
       @foreach($gallerys as $row)
-      @if($id++ < '9')
-      <article data-responsive="/uploads/gallery/{{$row->image}} 375, assets/img/NoPath.png 480, assets/img/NoPath.png 800" data-src="/uploads/gallery/{{$row->image}}">
-        <div class="box">
+      @if($id++ < '7')
+    <article data-responsive="/uploads/gallery/{{$row->image}} 375, /uploads/gallery/{{$row->image}} 480, /uploads/gallery/{{$row->image}} 800" data-src="/uploads/gallery/{{$row->image}}">
+        <div class="box animatable fadeInDown">
         <a href="">
           <div class="relative">
-            <!-- <img src="/uploads/gallery/{{$row->image}}"> -->
           <img class="img-responsive" src="/uploads/gallery/{{$row->image}}">
           <div class="rotated"></div>
           </div>
         </a>
-      
         </div>
     </article>
     @endif
     @endforeach
     @endif
-        
     </ul>
   </div>
 </div>
     </section>
-            <!--div> -->
+            </div>
           </div>
           <div class="gallery-btn">
-            <a href="/gallery"><button type="button" class="btn btn-outline-light">Read More</button></a>
+            <a href="/gallery"><button type="button" class="btn btn-outline-light">View All</button></a>
           </div>
         </div>
       </div>
     </section>
+    
     <section>
       <div class="profile-main-back">
         <div class="container">
@@ -272,63 +317,36 @@ About
     </section>
     <section>
 		  <div class="container max-con">
-			<div class="freshnews">
+			<div class="freshnews animatable fadeInDown">
 			  <h4>{{($aboublog) ? $aboublog->title : null}}</h4>
 		      <p>{{($aboublog) ? $aboublog->description : null}}</p>
 			</div>
-			<div class="freshblog">
+			<div class="freshblog animatable fadeInDown">
 				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-6">
+					@if($blogs)
+          <?php $id =1?>
+          @foreach($blogs as $blog)
+          @if($id ++ < '4')
+          <div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="blog-box">
-							<img src="/frontend/assets/img/gallery2.png">
+							<img src="/uploads/blog/{{$blog->image}}">
 							<div class="box-info">
-							  <h5>Changing Your Vision of Today's Possible Profits</h5>
-							  <button type="button" class="btn btn-light">READ MORE</button>
+							  <h5>{{$blog->title}}</h5>
+							  <a href="/blog/{{Str::slug($blog->title,'-')}}"><button type="button" class="btn btn-light"> <?php echo ($blog->lang=='en') ? 'READ MORE' : 'قراءة المزيد' ; ?></button></a>
 							  <div class="row">
 	                <div class="col-6">
-	                  <p>By : Digitalopment</p>
+	                  <p><?php echo ($blog->lang== 'en') ? 'By' : 'بواسطة' ; ?> : {{$blog->company}}</p>
 	                </div>
 	                <div class="col-6" align="right">
-	                  <p><img src="/frontend/assets/img/clock.png" alt=""> 12 Dec 2020</p>
+	                  <p><img src="/frontend/assets/img/clock.png" alt=""> {{$blog->created_at}}</p>
 	                </div>
 	              </div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="blog-box">
-							<img src="/frontend/assets/img/gallery2.png">
-							<div class="box-info">
-							  <h5>Changing Your Vision of Today's Possible Profits</h5>
-							  <button type="button" class="btn btn-light">READ MORE</button>
-							  <div class="row">
-				                <div class="col-6">
-				                  <p>By : Digitalopment</p>
-				                </div>
-				                <div class="col-6" align="right">
-				                  <p><img src="/frontend/assets/img/clock.png" alt=""> 12 Dec 2020</p>
-				                </div>
-				              </div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="blog-box">
-							<img src="/frontend/assets/img/gallery2.png">
-							<div class="box-info">
-							  <h5>Changing Your Vision of Today's Possible Profits</h5>
-							  <button type="button" class="btn btn-light">READ MORE</button>
-							  <div class="row">
-				                <div class="col-6">
-				                  <p>By : Digitalopment</p>
-				                </div>
-				                <div class="col-6" align="right">
-				                  <p><img src="/frontend/assets/img/clock.png" alt=""> 12 Dec 2020</p>
-				                </div>
-				              </div>
-							</div>
-						</div>
-					</div>
+					@endif
+          @endforeach
+          @endif
 				</div>
 			</div>
     	   </div>

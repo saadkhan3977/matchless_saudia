@@ -57,6 +57,10 @@
                       <label for="exampleInputEmail1">Image</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image" required="">
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Button Text</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="button_text" required="" placeholder="Enter Button Text">
+                    </div>
                     {{-- <div class="form-group">
                       <label for="exampleInputEmail1">Video Url</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="video_url" required="" placeholder="Enter Link">
@@ -94,6 +98,10 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">صورة</label>
                       <input type="file" class="form-control" id="exampleInputEmail1" name="image" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">زر كتابة</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="button_text" required="" placeholder="أدخل نص الزر">
                     </div>
                     {{-- <div class="form-group">
                       <label for="exampleInputEmail1">رابط الفيديو</label>
