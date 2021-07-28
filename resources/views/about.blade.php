@@ -181,8 +181,73 @@ About
         </div>
       </div>
     </section>
-
-    <section>
+<section>
+        <div class="container">
+          <div class="team-info animatable fadeInDown">
+            <h3>Our Team</h3>
+            <p>Meet tha team!<br> Mix of geeks and very creative people.</p>
+          </div>
+          <div class="team-images ">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="grid animatable fadeInDown">
+                <figure class="effect-sadie">
+                  <img src="/frontend/assets/img/pro.jpg">
+                  <figcaption>
+                    <h6>Coming soon</h6>
+                    <p>CEO</p>
+                    <div class="about-icon">
+                       <a href="https://www.facebook.com/matchlesssaudia/" class="facebook"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="https://twitter.com/SaudiaMatchless" class="twitter"><i class="fab fa-twitter"></i></a> 
+                        <a href="https://www.linkedin.com/company/matchless-saudia/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <!-- <a href="#"></a> -->
+                  </figcaption>     
+                </figure>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="grid animatable fadeInDown">
+                <figure class="effect-sadie">
+                  <img src="/frontend/assets/img/pro.jpg">
+                  <figcaption>
+                    <h6>Coming soon</h6>
+                    <p>CEO</p>
+                    <div class="about-icon">
+                       <a href="https://www.facebook.com/matchlesssaudia/" class="facebook"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="https://twitter.com/SaudiaMatchless" class="twitter"><i class="fab fa-twitter"></i></a> 
+                        <a href="https://www.linkedin.com/company/matchless-saudia/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <!-- <a href="#"></a> -->
+                  </figcaption>     
+                </figure>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="grid animatable fadeInDown">
+                <figure class="effect-sadie">
+                  <img src="/frontend/assets/img/pro.jpg">
+                  <figcaption>
+                    <h6>Coming soon</h6>
+                    <p>CEO</p>
+                    <div class="about-icon">
+                       <a href="https://www.facebook.com/matchlesssaudia/" class="facebook"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="https://twitter.com/SaudiaMatchless" class="twitter"><i class="fab fa-twitter"></i></a> 
+                        <a href="https://www.linkedin.com/company/matchless-saudia/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <!-- <a href="#"></a> -->
+                  </figcaption>     
+                </figure>
+              </div>
+            </div>
+          </div>
+        <div class="gallery-btn">
+            <a href="team.html"><button type="button" class="btn btn-outline-light">View All</button></a>
+          </div>
+        </div>
+        </div>
+    </section>
+    {{-- <section>
         <div class="container">
           <div class="team-info animatable fadeInDown">
            <h3>{{($secfiveheading) ? $secfiveheading->title : null}}</h3>
@@ -204,7 +269,7 @@ About
                       <a href="{{$team->twitter_link}}" class="twitter"><i class="fab fa-twitter"></i></a> 
                       <a href="{{$team->linkedin_link}}" class="linkedin"><i class="fab fa-linkedin"></i></a>
                     </div>
-                    {{-- <a href="#">View more</a> --}}
+                    {{-- <a href="#">View more</a>
                   </figcaption>     
                 </figure>
               </div>
@@ -217,7 +282,7 @@ About
           </div>
         </div>
         </div>
-    </section>
+    </section> --}} --}}
     <section>
       <div class="container">
         <div class="ceomass">

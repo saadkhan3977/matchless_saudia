@@ -18,6 +18,7 @@ Route::get('/team','TeamController@index');
 Route::get('/team/lang/{id}','TeamController@index');
 Route::get('/consultancy','ConsultancyController@index');
 Route::get('/interior','InteriorController@index');
+Route::get('/edge','InteriorController@edge');
 Route::get('/about','AboutController@index');
 Route::get('/about/lang/{id}','AboutController@index');
 Route::get('/event/{id}','ScheduleController@index');

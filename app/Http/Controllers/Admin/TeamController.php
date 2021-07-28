@@ -14,6 +14,7 @@ class TeamController extends Controller
     {
         $data = Team::get();
         $teamtitle = TeamTitle::get();
+        // print_r(count($teamtitle));die;
         $en = TeamTitle::where('lang','en')->first();
         $ar = TeamTitle::where('lang','ar')->first();
         return view('admin.team.index')

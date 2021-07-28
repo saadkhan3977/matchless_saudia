@@ -12,7 +12,7 @@ Consultancy
         </div>
         <div class="carousel-inner">
           @foreach($secone as $row)
-          <div class="carousel-item services-caro active" style="background-image: url('/uploads/consultancy/{{$row->image}}')">
+          <div class="carousel-item services-caro {{ $loop->first ? 'active' : '' }}" style="background-image: url('/uploads/consultancy/{{$row->image}}')">
            <div class="container">
             <div class="services-caro-info">
               <h5 class="fade-in-bottom">{{$row->title}}</h5>

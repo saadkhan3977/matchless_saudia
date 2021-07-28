@@ -28,4 +28,17 @@ class InteriorController extends Controller
         return view('interior')
     	->with(compact('secone','sectwo','sectwoheading','secthree','secfour','secfourheading'));
     }
+
+    public function edge()
+    {
+        $segments = request()->segments();
+        $langs = end($segments);
+        $lang = ($langs =='ar') ? 'ar' : 'en';
+
+        $secfour = InteriorSecFour::where('lang',$lang)->get();
+        $dsecfour = InteriorSecFour::where('lang',$lang)->OrderBy('id','desc')->get();
+        $secfourheading = InteriorSecFourHeading::where('lang',$lang)->first();
+        return view('edge')
+        ->with(compact('secfour','secfourheading','dsecfour'));
+    }
 }

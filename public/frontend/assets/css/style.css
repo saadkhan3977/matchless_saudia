@@ -4920,39 +4920,113 @@ border: 2px solid #D6B874;
    bottom: 0;
    background-color: rgba(0, 0, 0, .3);
 }
+ .background:first-child .content-wrapper {
+   transform: translateY(15vh);
+}
  .background:first-child {
    background-image: url('../img/scroll-img.png');
    transform: translateY(-15vh);
 }
- .background:first-child .content-wrapper {
-   transform: translateY(15vh);
-}
  .background:nth-child(2) {
-   background-image: url('../img/scroll-img2.png');
 }
  .background:nth-child(3) {
-   background-image: url('../img/scoll-img3.png');
 }
  .background:nth-child(4) {
-   background-image: url('../img/scroll-img4.png');
 }
  .background:nth-child(5) {
-   background-image: url('../img/scroll-img5.png');
 }
+ .background:nth-child(6) {
+}
+ .background:nth-child(7) {
+}
+ .background:nth-child(8) {
+}
+ .background:nth-child(9) {
+}
+ .background:nth-child(10) {
+}
+ .background:nth-child(11) {
+}
+
+ .background:nth-child(12) {
+}
+ .background:nth-child(13) {
+}
+.background:nth-child(14) {
+}
+.background:nth-child(15) {
+}
+.background:nth-child(16) {
+}
+.background:nth-child(17) {
+}
+.background:nth-child(18) {
+}
+.background:nth-child(19) {
+}
+.background:nth-child(20) {
+}
+
+
 /* Set stacking context of slides */
  .background:nth-child(1) {
-   z-index: 5;
+   z-index: 20;
 }
  .background:nth-child(2) {
-   z-index: 4;
+   z-index: 19;
 }
  .background:nth-child(3) {
-   z-index: 3;
+   z-index: 18;
 }
  .background:nth-child(4) {
-   z-index: 2;
+   z-index: 17;
 }
  .background:nth-child(5) {
+   z-index: 16;
+}
+ .background:nth-child(6) {
+   z-index: 15;
+}
+ .background:nth-child(7) {
+   z-index: 14;
+}
+ .background:nth-child(8) {
+   z-index: 13;
+}
+ .background:nth-child(9) {
+   z-index: 12;
+}
+ .background:nth-child(10) {
+   z-index: 11;
+}
+ .background:nth-child(11) {
+   z-index: 10;
+}
+ .background:nth-child(12) {
+   z-index: 9;
+}
+ .background:nth-child(13) {
+   z-index: 8;
+}
+ .background:nth-child(14) {
+   z-index: 7;
+}
+ .background:nth-child(15) {
+   z-index: 6;
+}
+ .background:nth-child(16) {
+   z-index: 5;
+}
+ .background:nth-child(17) {
+   z-index: 4;
+}
+ .background:nth-child(18) {
+   z-index: 3;
+}
+ .background:nth-child(19) {
+   z-index: 2;
+}
+ .background:nth-child(20) {
    z-index: 1;
 }
  .content-wrapper {
@@ -5002,7 +5076,7 @@ position: absolute;
     bottom: 80px;
     /*display: flex;*/
     flex-direction: column;
-    z-index: 10;
+    z-index: 1040;
     right: 120px;
 }
 .demobutton i
@@ -5048,7 +5122,7 @@ display: inline-block;
 position: absolute;
 transition: 0.5s;
 top: 110px;
-z-index: 10;
+z-index: 1040;
 overflow: hidden;
 transition: 0.5s;
 /*box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);*/

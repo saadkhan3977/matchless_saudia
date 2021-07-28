@@ -31,7 +31,7 @@
             <hr>
             {{-- @if(!$data) --}}
               {{-- <a href="{{route('team_title.create')}}" class="btn btn-icon generalsetting_admin"><i class="fa fa-plus"></i></a> --}}
-              @if(!$en && !$ar)
+              @if(count($teamtitle) < '2')
               <a class="btn btn-icon generalsetting_admin" data-toggle="modal" href='#modal-id'><i class="fa fa-plus"></i></a>
               @endif
               <div class="modal fade" id="modal-id">
@@ -66,7 +66,7 @@
                           </div>
                         </form>
                       </div>
-                      <div class="tab-pane p-v-sm  @if(!$en) active @endif " id="tab_2" dir="rtl">
+                      <div class="tab-pane p-v-sm  @if(!$ar) active @endif " id="tab_2" dir="rtl">
                         <form role="form" method="post" action="{{route('team_title.store')}}" enctype="multipart/form-data">
                           @csrf
                           <div class="modal-body">
