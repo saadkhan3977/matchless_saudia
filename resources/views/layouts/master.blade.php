@@ -88,10 +88,10 @@
               @foreach($public_menu as $menu)
                   @if( $menu['child'] )  
                   <div class="dropdown">
-                    <li class="nav-item @if('/'.request()->segment(1) == $menu['link']) active @endif"><a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a></li>
+                    <li class="nav-item @if('/'.request()->segment(1) == $menu['link']) active @endif"><a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="@if($langs =='ar') {{  $menu['link'] .'/lang/ar' }} @else {{ $menu['link'] }} @endif">{{ $menu['label'] }}</a></li>
                     <div class="dropdown-content">
                       @foreach( $menu['child'] as $child )
-                      <li class="nav-item @if('/'.request()->segment(1) == $child['link']) active @endif"><a class="nav-link" href="{{ $child['link'] }}">{{ $child['label'] }}</a></li>
+                      <li class="nav-item @if('/'.request()->segment(1) == $child['link']) active @endif"><a class="nav-link" href="@if($langs =='ar') {{  $child['link'] .'/lang/ar' }} @else {{ $child['link'] }} @endif">{{ $child['label'] }}</a></li>
                       @endforeach
                     </div>
                   </div>

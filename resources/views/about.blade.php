@@ -5,21 +5,16 @@ About
 @section('mainContent')
 
 <section>
-      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+      <div id="carouselExampleDark" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators about-indicators">
           @if(!empty(json_decode($secone)))
           <?php $id='1' ?>
           @foreach($secone as $row => $value)
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$row}}" class="@if($loop->first) active @endif" aria-current="true" aria-label="Slide {{$row + '1'}}"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$row}}" class="@if($loop->first) active @endif" aria-current="true" aria-label="Slide {{$id++}}"></button>
           @endforeach
           @endif
         </div>
         <div class="carousel-inner">
-          @if (\Session::has('success_contact'))
-            <div class="alert alert-success"  id="successMessage">
-              <p>{{ \Session::get('success_contact') }}</p>
-            </div><br />
-           @endif
           @if(!empty(json_decode($secone)))
           @foreach($secone as $row)
           <div class="carousel-item about-caro @if($loop->first) active @endif" style="background-image: url(/uploads/about/{{$row->image}});">
@@ -27,12 +22,12 @@ About
             <div class="about-caro-info">
               <h2>{{$row->title}}</h2>
               <p>{{$row->description}}</p>
-              {{-- <a href="{{$row->link}}"><buttontype="button" class="btn btn-light fade-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">{{$row->link_text}}</button></a> --}}
               <a href="#"><button type="button" class="btn btn-light fade-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">{{$row->link_text}}</button></a>
               <img src="/frontend/assets/img/shape.png">
             </div>
             </div>
           </div>
+          @endforeach
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -42,7 +37,94 @@ About
                 </div>
                 <div class="modal-body">
                   <div class="form-back modal-form">
-                    
+                    @if (\Session::has('success_contact'))
+                    <div class="alert alert-success">
+                      <p>{{ \Session::get('success_contact') }}</p>
+                    </div><br />
+                   @endif
+                  <form method="post" action="/contactus">
+                    @csrf
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->name : null}} *</label>
+                          <input type="text" class="form-control" name="name" required="">
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->email : null}} *</label>
+                          <input type="email" class="form-control" name="email" required="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->phone : null}} *</label>
+                          <input type="number" class="form-control" name="phone" required="">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="form-group mb-0">
+                        <label for="exampleFormControlTextarea1">{{ ($contactform) ? $contactform->description : null}}</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-light">{{ ($contactform) ? $contactform->submit : null}}</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          @endif
+        </div>
+        <button class="carousel-control-prev about-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next about-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      {{-- <div id="carouselExampleDark" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+        <div class="carousel-indicators about-indicators">
+          @if(!empty(json_decode($secone)))
+          <?php $id='1' ?>
+          @foreach($secone as $row => $value)
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$row}}" class="@if($loop->first) active @endif" aria-current="true" aria-label="Slide {{$id++}}"></button>
+          @endforeach
+          @endif
+        </div>
+        <div class="carousel-inner">
+          @if(!empty(json_decode($secone)))
+          @foreach($secone as $row)
+          <div class="carousel-item about-caro @if($loop->first) active @endif" style="background-image: url(/uploads/about/{{$row->image}});">
+           <div class="container">
+            <div class="about-caro-info">
+              <h2>{{$row->title}}</h2>
+              <p>{{$row->description}}</p>
+              <a href="#"><button type="button" class="btn btn-light fade-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$row->id}}">{{$row->link_text}}</button></a>
+              <img src="/frontend/assets/img/shape.png">
+            </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal-{{$row->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{$row->link_text}}</h5>
+                  <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-back modal-form">
+                    @if (\Session::has('success_contact'))
+                    <div class="alert alert-success">
+                      <p>{{ \Session::get('success_contact') }}</p>
+                    </div><br />
+                   @endif
                   <form method="post" action="/contactus">
                     @csrf
                     <div class="row">
@@ -92,15 +174,15 @@ About
           </div>
           @endif
         </div>
-        <button class="carousel-control-prev about-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev about-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next about-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next about-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> --}}
       
     </section>
     <section>

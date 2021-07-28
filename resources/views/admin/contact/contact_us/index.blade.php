@@ -40,6 +40,7 @@
             <th>Phone</th>
             <th>Subject</th>
             <th>Message</th>
+            <th>Manage</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +54,13 @@
             <td>{{$row->phone}}</td>
             <td>{{$row->subject}}</td>
             <td>{{$row->description}}</td>
+            <td>
+              <form method="post" action="/admin/contact_us/{{$row->id}}">
+                @csrf
+                @method('delete')
+              <button type="submit" onclick="return confirm('Are You Sure Want To Delete This..??')" class="btn btn-default generalsetting_admin"><i class="fa fa-trash "></i></button>
+              </form>
+            </td>
           </tr>
           @endforeach
           @endif

@@ -5,10 +5,10 @@
 @section('mainContent')
       <div class="mls-home-back">
         @if (\Session::has('success_contact'))
-                            <div class="alert alert-success" id="successMessage">
-                              <p>{{ \Session::get('success_contact') }}</p>
-                            </div><br />
-                           @endif
+        <div class="alert alert-success" id="successMessage">
+          <p>{{ \Session::get('success_contact') }}</p>
+        </div><br />
+        @endif
         <video src="/uploads/home/{{ ($videodata) ? $videodata->background_video : null}}" playsinline autoplay muted loop id="bgvideo"></video>
         <div class="container">
           <div class="home-main-content">

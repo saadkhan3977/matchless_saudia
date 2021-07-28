@@ -18,8 +18,6 @@
     <link rel="icon" href="/frontend/assets/img/favicon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <title>MLS | Edge</title>
-  </head>
   <?php
     $preloaders = new App\Models\GeneralSettingPreloader;
     $preloader = $preloaders::first();
@@ -27,6 +25,8 @@
     $segments = request()->segments();
     $langs = end($segments);
   ?>
+    <title>MLS | @if($langs =='ar') حافة @else Edge @endif</title>
+  </head>
   <body class="scrollbar" id="style-1" @if($langs =='ar') dir="rtl" @endif>
 <style type="text/css">
   
@@ -88,10 +88,10 @@
               @foreach($public_menu as $menu)
                   @if( $menu['child'] )  
                   <div class="dropdown">
-                    <li class="nav-item @if('/'.request()->segment(1) == $menu['link']) active @endif"><a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a></li>
+                    <li class="nav-item @if('/'.request()->segment(1) == $menu['link']) active @endif"><a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="@if($langs =='ar') {{  $menu['link'] .'/lang/ar' }} @else {{ $menu['link'] }} @endif">{{ $menu['label'] }}</a></li>
                     <div class="dropdown-content">
                       @foreach( $menu['child'] as $child )
-                      <li class="nav-item @if('/'.request()->segment(1) == $child['link']) active @endif"><a class="nav-link" href="{{ $child['link'] }}">{{ $child['label'] }}</a></li>
+                      <li class="nav-item @if('/'.request()->segment(1) == $child['link']) active @endif"><a class="nav-link" href="@if($langs =='ar') {{  $child['link'] .'/lang/ar' }} @else {{ $child['link'] }} @endif">{{ $child['label'] }}</a></li>
                       @endforeach
                     </div>
                   </div>
@@ -190,8 +190,8 @@
       @endif @endif
       &nbsp;
     </div>
-    <section>
-      <a href="interior.html"><button class="interiorback"><span>Back</span></button></a>
+    <section dir="ltr">
+      <a href="" ><button onclick="window.history.go(-1); return false;" class="interiorback"><span>@if($langs =='ar') عودة @else Back @endif</span></button></a>
       <div class="container">
         @foreach($secfour as $row)
           <section class="background" style="background-image: url(/uploads/interior/{{$row->image}});">

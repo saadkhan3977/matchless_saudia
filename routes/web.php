@@ -17,8 +17,11 @@ Route::get('/lang/{id}','HomeController@index');
 Route::get('/team','TeamController@index');
 Route::get('/team/lang/{id}','TeamController@index');
 Route::get('/consultancy','ConsultancyController@index');
+Route::get('/consultancy/lang/{id}','ConsultancyController@index');
 Route::get('/interior','InteriorController@index');
+Route::get('/interior/lang/{id}','InteriorController@index');
 Route::get('/edge','InteriorController@edge');
+Route::get('/edge/lang/{id}','InteriorController@edge');
 Route::get('/about','AboutController@index');
 Route::get('/about/lang/{id}','AboutController@index');
 Route::get('/event/{id}','ScheduleController@index');
@@ -60,6 +63,7 @@ Route::group(['prefix' => 'blog'], function () {
 
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 		Route::get('/user_contact','Contact\FormController@contact_us');
+		Route::delete('/contact_us/{id}','Contact\ContactUsController@delete');
 		Route::resource('emails','EmailsController');
 		Route::get('/gallery','GalleryController@index');
 		Route::post('/gallery','GalleryController@store');

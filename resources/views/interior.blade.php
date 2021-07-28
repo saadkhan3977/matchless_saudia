@@ -1,6 +1,10 @@
 @extends('layouts.master')
+<?php 
+  $segments = request()->segments();
+  $langs = end($segments);
+?>
 @section('page-title')
-    Interior 
+    @if($langs =='ar') الداخلية  @else Interior @endif 
 @endsection
 @section('mainContent')
     <section>
@@ -89,7 +93,7 @@
             </div>
             @endforeach
           </div>
-          <a href="/edge"><button class="edgenext"><span>Next</span></button></a>
+          <a @if($langs =='ar') dir="ltr" @endif href="@if($langs =='ar') /edge/lang/ar @else /edge @endif"><button class="edgenext"><span>@if($langs =='ar') التالي @else Next @endif</span></button></a>
         </div>
       </div>
     </section>
