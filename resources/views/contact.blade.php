@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('page-title')
+Contact Us
+@endsection
 @section('mainContent')
 
     <section>
@@ -70,10 +73,10 @@
 
                 <div class="form-back">
                   @if (\Session::has('success_contact'))
-                <div class="alert alert-success">
-                  <p>{{ \Session::get('success_contact') }}</p>
-                </div><br />
-               @endif
+                    <div class="alert alert-success">
+                      <p>{{ \Session::get('success_contact') }}</p>
+                    </div><br />
+                   @endif
                   <form method="post" action="/contactus">
                     @csrf
                     <div class="row">

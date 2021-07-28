@@ -15,6 +15,7 @@ use App\Models\AboutBlog;
 use App\Models\AboutGalleryHeading;
 use App\Models\Team;
 use App\Models\Blog;
+use App\Models\ContactForm;
 
 class AboutController extends Controller
 {
@@ -36,8 +37,10 @@ class AboutController extends Controller
         $gallerys = Gallery::get();
         $testimonials = Testimonial::get();
         $aboublog = AboutBlog::where('lang',$lang)->first();
+        $contactform = ContactForm::where('lang',$lang)->first();
+
 
     	return view('about')
-    	->with(compact('secone','sectwo','secthree','secfourheading','secfiveheading','secsix','gallerys','testimonials','galleryheading','aboublog','teams','events','blogs'));
+    	->with(compact('secone','sectwo','secthree','secfourheading','secfiveheading','secsix','gallerys','testimonials','galleryheading','aboublog','teams','events','blogs','contactform'));
     }
 }

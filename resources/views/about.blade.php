@@ -15,6 +15,11 @@ About
           @endif
         </div>
         <div class="carousel-inner">
+          @if (\Session::has('success_contact'))
+            <div class="alert alert-success"  id="successMessage">
+              <p>{{ \Session::get('success_contact') }}</p>
+            </div><br />
+           @endif
           @if(!empty(json_decode($secone)))
           @foreach($secone as $row)
           <div class="carousel-item about-caro @if($loop->first) active @endif" style="background-image: url(/uploads/about/{{$row->image}});">
@@ -28,6 +33,52 @@ About
             </div>
             </div>
           </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{$row->link_text}}</h5>
+                  <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-back modal-form">
+                    
+                  <form method="post" action="/contactus">
+                    @csrf
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->name : null}} *</label>
+                          <input type="text" class="form-control" name="name" required="">
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->email : null}} *</label>
+                          <input type="email" class="form-control" name="email" required="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group mb-0">
+                          <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->phone : null}} *</label>
+                          <input type="number" class="form-control" name="phone" required="">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="form-group mb-0">
+                        <label for="exampleFormControlTextarea1">{{ ($contactform) ? $contactform->description : null}}</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-light">{{ ($contactform) ? $contactform->submit : null}}</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           @endforeach
           @else
           <div class="carousel-item about-caro active">
@@ -50,50 +101,7 @@ About
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">FREE CONSULTATION</h5>
-                        <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="form-back modal-form">
-                        <form>
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                              <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Name *</label>
-                                <input type="text" class="form-control" placeholder="Your Full Name">
-                              </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                              <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Email *</label>
-                                <input type="text" class="form-control" placeholder="Your Email">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                              <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Phone *</label>
-                                <input type="number" class="form-control" placeholder="Your Phone Number">
-                              </div>
-                            </div>
-                          </div>
-                            <div class="form-group mb-0">
-                              <label for="exampleFormControlTextarea1">Comment</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write Your message here"></textarea>
-                            </div>
-                            <button type="button" class="btn btn-light">submit</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      
     </section>
     <section>
       <div class="container">
@@ -181,7 +189,7 @@ About
         </div>
       </div>
     </section>
-<section>
+{{-- <section>
         <div class="container">
           <div class="team-info animatable fadeInDown">
             <h3>Our Team</h3>
@@ -246,8 +254,8 @@ About
           </div>
         </div>
         </div>
-    </section>
-    {{-- <section>
+    </section> --}}
+    <section>
         <div class="container">
           <div class="team-info animatable fadeInDown">
            <h3>{{($secfiveheading) ? $secfiveheading->title : null}}</h3>
@@ -269,7 +277,7 @@ About
                       <a href="{{$team->twitter_link}}" class="twitter"><i class="fab fa-twitter"></i></a> 
                       <a href="{{$team->linkedin_link}}" class="linkedin"><i class="fab fa-linkedin"></i></a>
                     </div>
-                    {{-- <a href="#">View more</a>
+                    {{-- <a href="#">View more</a> --}}
                   </figcaption>     
                 </figure>
               </div>
@@ -282,7 +290,7 @@ About
           </div>
         </div>
         </div>
-    </section> --}} --}}
+    </section> 
     <section>
       <div class="container">
         <div class="ceomass">

@@ -29,9 +29,13 @@ class ProjectsController extends Controller
         // print_r($text);die;
         $title = str_replace("-"," ",Str::slug($id));
         // print_r($id);die;
+        $segments = request()->segments();
+        $langs = end($segments);
+        $lang = ($langs =='ar') ? 'ar' : 'en';
+
     	$data = Projects::where('slug',$id)->first();
     	$gallery = ProjectGallery::where('project_id',$data->id)->get();
-    	$projects = Projects::get();
+    	$projects = Projects::where('lang',$lang)->get();
 
     	return view('project_detail')
     	->with(compact('gallery','data','projects'));

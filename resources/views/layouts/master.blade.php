@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/frontend/assets/css/style.css">
-    <link rel="stylesheet" href="/frontend/assets/css/lity.min.css">
     {{-- ABout Us --}}
     <link href="/frontend/assets/css/lightgallery.css" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/assets/css/lity.min.css">
     {{-- Career --}}
     <link rel="stylesheet" href="/frontend/assets/css/slick.min.css">
 {{-- Edge --}}
@@ -332,7 +332,15 @@
     <script src="/frontend/assets/js/bootstrap.min.js"></script>
     <script src="/frontend/assets/js/lity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-   
+   <script type="text/javascript">
+    $( document ).ready(function() {
+    // console.log( "ready!" );
+      setTimeout(function() {
+        // alert('s');
+        $('#successMessage').fadeOut('fast');
+    }, 3000); // <-- time in milliseconds
+});
+    </script>
     <script src="/frontend/assets/js/index.js"></script>
     {{-- Career --}}
     <script src="/frontend/assets/js/career.js"></script>
@@ -355,50 +363,7 @@
       lightGallery(document.getElementById('lightgallery'));
     </script>
 
-     {{-- Project Inside --}}
-    <script src="https://cdn2.hubspot.net/hub/322787/hub_generated/style_manager/1440007714979/custom/page/hack-a-thon-3/masonry.min.min.js"></script>
-    <script src="https://cdn2.hubspot.net/hub/322787/hub_generated/style_manager/1440007849180/custom/page/hack-a-thon-3/isotope.min.js"></script>
-    <script src="/frontend/assets/js/projectinside.js"></script>
-
-    <script>
-  $( function() {
-  var $grid = $('.grid').isotope({
-    itemSelector: 'article'
-  });
-
-  // filter buttons
-  $('.filters-button-group').on( 'click', 'button', function() {
-    var filterValue = $( this ).attr('data-filter');
-    $grid.isotope({ filter: filterValue });
-  });
-  $('.button-group').each( function( i, buttonGroup ) {
-    var $buttonGroup = $( buttonGroup );
-    $buttonGroup.on( 'click', 'button', function() {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $( this ).addClass('is-checked');
-    });
-  });
-});
-
-// debounce so filtering doesn't happen every millisecond
-function debounce( fn, threshold ) {
-  var timeout;
-  return function debounced() {
-    if ( timeout ) {
-      clearTimeout( timeout );
-    }
-    function delayed() {
-      fn();
-      timeout = null;
-    }
-    timeout = setTimeout( delayed, threshold || 100 );
-  }
-}
-
-$(window).bind("load", function() {
-  $('#all').click();
-});
-</script>
+    
 {{-- Edge --}}
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
@@ -552,5 +517,6 @@ parallaxScrollll('60');
 
 
 </script>
+
     </body>
 </html>

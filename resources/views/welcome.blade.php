@@ -4,6 +4,11 @@
 @endsection
 @section('mainContent')
       <div class="mls-home-back">
+        @if (\Session::has('success_contact'))
+                            <div class="alert alert-success" id="successMessage">
+                              <p>{{ \Session::get('success_contact') }}</p>
+                            </div><br />
+                           @endif
         <video src="/uploads/home/{{ ($videodata) ? $videodata->background_video : null}}" playsinline autoplay muted loop id="bgvideo"></video>
         <div class="container">
           <div class="home-main-content">
@@ -24,34 +29,36 @@
                       </div>
                       <div class="modal-body">
                         <div class="form-back modal-form">
-                        <form>
+                          
+                        <form method="post" action="/contactus">
+                          @csrf
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                               <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Name *</label>
-                                <input type="text" class="form-control" placeholder="Your Full Name">
+                                <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->name : null}} *</label>
+                                <input type="text" class="form-control" name="name" required="">
                               </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                               <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Email *</label>
-                                <input type="text" class="form-control" placeholder="Your Email">
+                                <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->email : null}} *</label>
+                                <input type="email" class="form-control" name="email" required="">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                               <div class="form-group mb-0">
-                                <label for="exampleInputEmail1">Your Phone *</label>
-                                <input type="number" class="form-control" placeholder="Your Phone Number">
+                                <label for="exampleInputEmail1">{{ ($contactform) ? $contactform->phone : null}} *</label>
+                                <input type="number" class="form-control" name="phone" required="">
                               </div>
                             </div>
                           </div>
                             <div class="form-group mb-0">
-                              <label for="exampleFormControlTextarea1">Comment</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write Your message here"></textarea>
+                              <label for="exampleFormControlTextarea1">{{ ($contactform) ? $contactform->description : null}}</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                             </div>
-                            <button type="button" class="btn btn-light">submit</button>
+                            <button type="submit" class="btn btn-light">{{ ($contactform) ? $contactform->submit : null}}</button>
                           </div>
                         </form>
                       </div>
@@ -200,7 +207,7 @@
               <div class="col-lg-7 col-md-6">
                 <div class="form-back animatable fadeInDown">
                    @if (\Session::has('success_contact'))
-                <div class="alert alert-success">
+                <div class="alert alert-success"  id="successMessage">
                   <p>{{ \Session::get('success_contact') }}</p>
                 </div><br />
                @endif
@@ -252,5 +259,6 @@
             </div>
       </div>
     </section>
+
     @endsection
 
