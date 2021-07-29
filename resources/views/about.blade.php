@@ -185,6 +185,7 @@ About
       </div> --}}
       
     </section>
+    
     <section>
       <div class="container">
         <div class="about-info">
@@ -214,7 +215,7 @@ About
                 <div class="video-main">
                   <div class="promo-video">
                   </div>
-                  <a href="{{($secthree) ? $secthree->video_url : null}}" class="about-play video-popup mfp-iframe" data-lity><i class="fa fa-play"></i></a>
+                  {{-- <a href="{{($secthree) ? $secthree->video_url : null}}" class="about-play video-popup mfp-iframe" data-lity><i class="fa fa-play"></i></a> --}}
                 </div>
               </div>
               <img src="/uploads/about/{{($secthree) ? $secthree->image : null }}">  

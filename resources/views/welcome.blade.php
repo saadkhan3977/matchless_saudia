@@ -23,9 +23,9 @@
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ ($videodata) ? $videodata->button_text : null }}</h5>
-                        <button type="button" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                      <div class="modal-header" >
+                        <button type="button" style="float: left;" class="btn-close newmodal" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                        <h5 class="modal-title"  style="float: right;" id="exampleModalLabel">{{ ($videodata) ? $videodata->button_text : null }}</h5>
                       </div>
                       <div class="modal-body">
                         <div class="form-back modal-form">
@@ -143,7 +143,7 @@
           <div class="item c-item" style="background-image: url(uploads/project/{{$row->image}});" id="cero-{{$id++}}">
             <a href="{{$row->video}}" class=" video-popup mfp-iframe" data-lity>
             <div class="cero-info">
-              <img src="/frontend/assets/img/play.png">
+              {{-- <img src="/frontend/assets/img/play.png"> --}}
             </div></a>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12">

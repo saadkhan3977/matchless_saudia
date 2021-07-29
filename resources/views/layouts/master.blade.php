@@ -517,6 +517,19 @@ parallaxScrollll('60');
 
 
 </script>
-
+{{-- Consultancy --}}
+<script>
+  $('.hideservice').hide();
+  function show_services(argument) {
+    if($('.hideservice').hide())
+    {
+      $('.show-service-'+argument).show();
+    }
+    else
+    {
+      $('.hideservice').hide();
+    }
+  }
+</script>
     </body>
 </html>
