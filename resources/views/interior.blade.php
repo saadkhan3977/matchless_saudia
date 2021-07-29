@@ -20,9 +20,9 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="edge-detail">
-                <div class="edge-border fade-in-left "></div>
-                <div class="edge-detail-img">
-                  <img class="animatable fadeInDown" src="/uploads/interior/{{ ($secone) ? $secone->image : null}}" alt="{{ ($secone) ? $secone->title : null}}">
+                <div class="edge-border fade-in-left" @if($langs =='ar') style="margin-right: 40px" @endif></div>
+                <div class="edge-detail-img" >
+                  <img @if($langs=='ar') style="margin-right: auto;" @endif class="animatable fadeInDown" src="/uploads/interior/{{ ($secone) ? $secone->image : null}}" alt="{{ ($secone) ? $secone->title : null}}">
                 </div>
                 <div class="edge-detail-img2">
                   <img src="/frontend/assets/img/shape.png" alt="">
