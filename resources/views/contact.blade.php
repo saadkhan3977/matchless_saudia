@@ -26,11 +26,11 @@ Contact Us
               <div class="backshadow">
               <div class="visitus">
                 <div class="modal11">
-                <h5>VISIT US</h5>
+                <h5>{{ ($visit) ? $visit->title : null }}</h5>
                 <p>{{ ($visit) ? $visit->address : null }}</p>
                 <h6>{{ ($visit) ? $visit->phone : null }}</h6>
-                <H5>{{ ($visit) ? $visit->title : null }}</H5>
-                <p>{{ ($visit) ? $visit->description : null }}</p>
+                <H5>{{ ($visit) ? $visit->description : null }}</H5>
+                <p></p>
                 <h6>{{ ($visit) ? $visit->email : null }}</h6>
                 <div class="follow-section">
                 <div class="social-icons mt-3 ">

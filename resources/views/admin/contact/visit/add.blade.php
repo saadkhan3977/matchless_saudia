@@ -38,21 +38,21 @@
                       <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Enter Title">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter Action Link">
+                      <label for="exampleInputEmail1">Address</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="Enter Address">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Phone</label>
                       <input type="phone" class="form-control" id="exampleInputEmail1" name="phone" placeholder="Enter Phone">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Address</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="Enter Address">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Description</label>
+                      <label for="exampleInputEmail1">Sub Title</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="en" hidden="">
                       <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="Enter Text">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter Action Link">
                     </div>
                     
                     <button type="submit" class="btn white m-b generalsetting_admin">Submit</button>
@@ -66,21 +66,21 @@
                       <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="أدخل العنوان">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">بريد إلكتروني</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="أدخل البريد الإلكتروني">
+                      <label for="exampleInputEmail1">عنوان</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="أدخل العنوان">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">هاتف</label>
                       <input type="phone" class="form-control" id="exampleInputEmail1" name="phone" placeholder="أدخل الهاتف">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">عنوان</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="أدخل العنوان">
+                      <label for="exampleInputEmail1">العنوان الفرعي</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="أدخل العنوان الفرعي">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">وصف</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="lang" value="ar" hidden="">
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="أدخل النص">
+                      <label for="exampleInputEmail1">بريد إلكتروني</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="أدخل البريد الإلكتروني">
                     </div>
                     
                     <button type="submit" class="btn white m-b generalsetting_admin">إرسال</button>
