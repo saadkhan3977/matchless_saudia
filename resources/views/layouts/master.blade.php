@@ -26,10 +26,20 @@
 
     $segments = request()->segments();
     $langs = end($segments);
+        $useragent = $_SERVER['HTTP_USER_AGENT']; 
+        $iPod = stripos($useragent, "iPod"); 
+        $iPad = stripos($useragent, "iPad"); 
+        $iPhone = stripos($useragent, "iPhone");
+        $Android = stripos($useragent, "Android"); 
+        $iOS = stripos($useragent, "iOS");
+        //-- You can add billion devices 
+        $DEVICE = ($iPod||$iPad||$iPhone||$Android||$iOS);
   ?>
   <body class="scrollbar" id="style-1" @if(url()->current() != url('/') && url()->current() != url('/lang/ar')) @if($langs =='ar') dir="rtl" @endif @endif>
 <style type="text/css">
-  
+  body{
+        overflow-x: hidden;
+  }
 .loading{
     /*display: none;*/
     position: fixed;
@@ -171,7 +181,7 @@
         </div>
       </nav>
     </header>
-    <div class="side-icon-bar">
+    <div class="side-icon-bar" style="@if($langs == 'ar') left: 0px;  border-top-right-radius: 25px; border-bottom-right-radius: 25px; @else right: 0px;  border-top-left-radius: 25px; border-bottom-left-radius: 25px; @endif">
       <p>{{ ($footer) ? $footer->getintouch : null}}</p>
       {{-- @if($link) @if($link->facebook_status !='')
       <a href="{{$link->facebook}}" class="facebook"><i class="fab fa-facebook-f"></i></a> 
@@ -195,7 +205,7 @@
     @yield('mainContent')
     <a href="#" id="scroll" style="display: none;">
           <i class="fa fa-chevron-up"></i></a>
-    <footer dir="rtl">
+    <footer >
       <div class="footer-main">
         <div class="container max-con">
           <div class="row">
