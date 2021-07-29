@@ -27,7 +27,7 @@
     $segments = request()->segments();
     $langs = end($segments);
   ?>
-  <body class="scrollbar" id="style-1" @if($langs =='ar') dir="rtl" @endif>
+  <body class="scrollbar" id="style-1" @if(url()->current() != url('/') && url()->current() != url('/lang/ar')) @if($langs =='ar') dir="rtl" @endif @endif>
 <style type="text/css">
   
 .loading{
@@ -41,7 +41,7 @@
     background: rgba(255,255,255,0.8) url("/uploads/preloader/{{($preloader) ? $preloader->website_loader : '' }}") center no-repeat;
 }
 </style>
-<header class="wrap_nav">
+<header class="wrap_nav" dir="ltr">
       <nav class="navbar navbar-expand-lg custom-nav navbar-light">
         <div class="container max-con">
           <?php 
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-          <button class="navbar-toggler custom-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button  class="navbar-toggler custom-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <!-- <span class="navbar-toggler-icon"></span> -->
          <i class="fas fa-bars nav-bar-custom"></i>
        </button>
@@ -82,8 +82,8 @@
             $public_menu = Menu::getByName('Header-Menu-En'); 
         }
        ?>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav custom-ul ml-auto btn-15 ">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav custom-ul ml-auto btn-15 " >
               @if($public_menu)
               @foreach($public_menu as $menu)
                   @if( $menu['child'] )  
@@ -195,7 +195,7 @@
     @yield('mainContent')
     <a href="#" id="scroll" style="display: none;">
           <i class="fa fa-chevron-up"></i></a>
-    <footer>
+    <footer dir="rtl">
       <div class="footer-main">
         <div class="container max-con">
           <div class="row">

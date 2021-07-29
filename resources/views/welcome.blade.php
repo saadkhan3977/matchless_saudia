@@ -3,7 +3,19 @@
   Home
 @endsection
 @section('mainContent')
-      <div class="mls-home-back">
+              <?php // Get the downloader object
+                $useragent = $_SERVER['HTTP_USER_AGENT']; 
+                $iPod = stripos($useragent, "iPod"); 
+                $iPad = stripos($useragent, "iPad"); 
+                $iPhone = stripos($useragent, "iPhone");
+                $Android = stripos($useragent, "Android"); 
+                $iOS = stripos($useragent, "iOS");
+                //-- You can add billion devices 
+                $DEVICE = ($iPod||$iPad||$iPhone||$Android||$iOS);
+$segments = request()->segments();
+    $langs = end($segments);
+                ?>
+      <div class="mls-home-back" @if(!$DEVICE)  @if($langs =='ar') dir="ltr" @endif @endif>
         @if (\Session::has('success_contact'))
         <div class="alert alert-success" id="successMessage">
           <p>{{ \Session::get('success_contact') }}</p>
@@ -14,7 +26,7 @@
           <div class="home-main-content">
            <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="home-info">
+              <div class="home-info"@if($DEVICE) dir="rtl" @endif>
                 <h6>{{ ($videodata) ? $videodata->title : null}}</h6>
                 <p>{{ ($videodata) ? $videodata->sub_title : null}}</p>
                 <hr>
@@ -69,9 +81,9 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="about-wrapper">
+              <div class="about-wrapper" >
                 <div class="video-main">
-                  <div class="promo-video">
+                  <div class="promo-video" >
                     <div class="waves-block">
                       <div class="about-waves wave-1"></div>
                       <div class="about-waves wave-2"></div>

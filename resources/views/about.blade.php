@@ -401,8 +401,8 @@ About
     <section>
       <div class="container">
         <div class="our-gallery ">
-          <h3>OUR GALLERY</h3>
-          <p>Welcome to MLS!<br> This is our gallery check it out. </p>
+          <h3>{{($galleryheading) ? $galleryheading->title : null}}</h3>
+          <p>{{($galleryheading) ? $galleryheading->description : null}}</p>
           <br>
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
