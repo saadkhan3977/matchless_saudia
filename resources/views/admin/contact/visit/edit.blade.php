@@ -37,7 +37,7 @@
                       <input type="phone" class="form-control" value="{{$data->phone}}" id="exampleInputEmail1" name="phone" placeholder="Enter Phone">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Description</label>
+                      <label for="exampleInputEmail1">Sub Title</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" value="{{$data->description}}" name="description" placeholder="Enter Text">
                     </div>
                     <div class="form-group">
